@@ -756,3 +756,100 @@ nav a i {
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
+
+/* Ícone do carrinho destacado */
+nav a[href="carrinho.html"] {
+    color: #ffd700 !important;
+    font-weight: bold;
+}
+
+nav a[href="carrinho.html"] i {
+    color: #ffd700;
+}
+
+#carrinho-contador {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    margin-left: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+}
+
+.imagens-produto {
+    position: relative;
+}
+
+.imagem-principal {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.miniaturas {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.miniatura {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    display: inline-block !important;
+}
+
+.miniatura:hover {
+    border-color: #5d7a5c;
+    transform: scale(1.05);
+}
+
+/* 🛒 CARRINHO DESTACADO */
+nav a[href="carrinho.html"] {
+    background: #ffd700 !important;        /* Fundo dourado */
+    color: #2c3e50 !important;              /* Texto escuro */
+    font-weight: bold;
+    border-radius: 30px !important;         /* Botão arredondado */
+    padding: 8px 15px !important;
+    margin-left: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra */
+    transition: all 0.3s ease;
+}
+
+nav a[href="carrinho.html"]:hover {
+    background: #f1c40f !important;         /* Mais escuro no hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+nav a[href="carrinho.html"] i {
+    color: #2c3e50 !important;               /* Ícone escuro */
+    margin-right: 5px;
+}
+
+#carrinho-contador {
+    background: #e74c3c !important;         /* Vermelho vivo */
+    color: white !important;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8em;
+    margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

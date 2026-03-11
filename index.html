@@ -217,64 +217,72 @@
 
     // 🔥 CARREGAR TODOS OS PRODUTOS DO JSON
     fetch('dados/produtos.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao carregar produtos');
+    .then(response => {
+        if (!response.ok) throw new Error('Erro ao carregar produtos');
+        return response.json();
+    })
+    .then(data => {
+        const produtos = data.produtos || [];
+        const grid = document.getElementById('produtos-grid');
+        
+        if (produtos.length === 0) {
+            grid.innerHTML = '<div class="sem-produtos">Nenhum produto cadastrado ainda.</div>';
+            return;
+        }
+
+        grid.innerHTML = '';
+
+        produtos.forEach(p => {
+            let badge = '';
+            if (p.destaque === 'mais-vendido') {
+                badge = '<span class="badge mais-vendido">🔥 Mais Vendido</span>';
+            } else if (p.destaque === 'novidade') {
+                badge = '<span class="badge novidade">🆕 Novidade</span>';
+            } else if (p.destaque === 'colecao') {
+                badge = '<span class="badge colecao">📚 Coleção</span>';
             }
-            return response.json();
-        })
-        .then(data => {
-            const produtos = data.produtos || [];
-            const grid = document.getElementById('produtos-grid');
+
+            const imagem = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
             
-            if (produtos.length === 0) {
-                grid.innerHTML = '<div class="sem-produtos">Nenhum produto cadastrado ainda.</div>';
-                return;
+            // 🔥 Verificar se existem imagens secundárias
+            let miniaturas = '';
+            for (let i = 1; i <= 3; i++) {
+                miniaturas += `<img src="imagens/produtos/${p.codigo}-${i}.jpg" class="miniatura" style="display:none;" onload="this.style.display='inline-block'">`;
             }
 
-            grid.innerHTML = '';
+            const produto = {
+                codigo: p.codigo,
+                nome: p.descricao,
+                preco: parseFloat(p.preco.replace(',', '.')),
+                imagem: imagem
+            };
 
-            produtos.forEach(p => {
-                // Definir badge baseado no destaque
-                let badge = '';
-                if (p.destaque === 'mais-vendido') {
-                    badge = '<span class="badge mais-vendido">🔥 Mais Vendido</span>';
-                } else if (p.destaque === 'novidade') {
-                    badge = '<span class="badge novidade">🆕 Novidade</span>';
-                } else if (p.destaque === 'colecao') {
-                    badge = '<span class="badge colecao">📚 Coleção</span>';
-                }
-
-                const imagem = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
-                
-                const produto = {
-                    codigo: p.codigo,
-                    nome: p.descricao,
-                    preco: parseFloat(p.preco.replace(',', '.')),
-                    imagem: imagem
-                };
-
-                const card = `
-                <div class="produto-card">
-                    ${badge}
-                    <img src="${imagem}" alt="${p.descricao}" onerror="this.src='imagens/placeholder.jpg'">
-                    <div class="produto-info">
-                        <h4>${p.descricao}</h4>
-                        <div class="preco">R$ ${p.preco}</div>
-                        <button onclick='window.carrinho.adicionar(${JSON.stringify(produto)})' class="btn-carrinho">
-                            <i class="fas fa-cart-plus"></i> Adicionar
-                        </button>
+            const card = `
+            <div class="produto-card">
+                ${badge}
+                <div class="imagens-produto">
+                    <img src="${imagem}" class="imagem-principal" alt="${p.descricao}" onerror="this.src='imagens/placeholder.jpg'">
+                    <div class="miniaturas">
+                        ${miniaturas}
                     </div>
                 </div>
-                `;
-                grid.innerHTML += card;
-            });
-        })
-        .catch(erro => {
-            console.error('Erro ao carregar produtos:', erro);
-            document.getElementById('produtos-grid').innerHTML = 
-                '<div class="sem-produtos">Erro ao carregar produtos. Tente novamente mais tarde.</div>';
+                <div class="produto-info">
+                    <h4>${p.descricao}</h4>
+                    <div class="preco">R$ ${p.preco}</div>
+                    <button onclick='window.carrinho.adicionar(${JSON.stringify(produto)})' class="btn-carrinho">
+                        <i class="fas fa-cart-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+            `;
+            grid.innerHTML += card;
         });
+    })
+    .catch(erro => {
+        console.error('Erro ao carregar produtos:', erro);
+        document.getElementById('produtos-grid').innerHTML = 
+            '<div class="sem-produtos">Erro ao carregar produtos. Tente novamente mais tarde.</div>';
+    });
 </script>
 
 </body>
