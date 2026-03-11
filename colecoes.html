@@ -3,40 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novidades - WMLopes Acessórios e Semijoias</title>
+    <title>Coleções - WMLopes Acessórios e Semijoias</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .pagina-novidades {
+        .pagina-colecoes {
             max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
         }
 
-        .pagina-novidades h2 {
+        .pagina-colecoes h2 {
             color: #5d7a5c;
             text-align: center;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
 
-        .pagina-novidades .subtitulo {
+        .subtitulo {
             text-align: center;
             color: #666;
             margin-bottom: 40px;
             font-size: 1.2em;
         }
 
-        .destaque-semana {
-            margin-bottom: 60px;
-        }
-
-        .destaque-semana h3 {
-            color: #5d7a5c;
-            margin-bottom: 20px;
-        }
-
-        .destaque-card {
+        .colecao-destaque {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
@@ -44,55 +35,44 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(93, 122, 92, 0.2);
+            margin-bottom: 60px;
         }
 
-        .destaque-card img {
+        .colecao-destaque img {
             width: 100%;
             height: 400px;
             object-fit: cover;
         }
 
-        .destaque-info {
+        .colecao-info {
             padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .destaque-info h4 {
+        .colecao-info h3 {
             font-size: 1.8em;
             color: #5d7a5c;
             margin-bottom: 15px;
         }
 
-        .destaque-info .preco {
+        .colecao-info .preco {
             font-size: 2.2em;
             color: #8b9a6e;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
 
-        .destaque-info .descricao {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .btn-whatsapp-destaque {
-            display: inline-block;
-            background: #25D366;
+        .badge {
+            background: #8b9a6e;
             color: white;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 30px;
+            padding: 5px 15px;
+            border-radius: 25px;
             font-weight: bold;
-            font-size: 1.1em;
-            transition: all 0.3s;
+            display: inline-block;
             width: fit-content;
-        }
-
-        .btn-whatsapp-destaque:hover {
-            background: #128C7E;
+            margin-bottom: 15px;
         }
 
         .btn-carrinho {
@@ -116,43 +96,61 @@
             margin-right: 5px;
         }
 
-        .novidades-grid {
+        .colecoes-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
-        .novidade-item {
+        .produto-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            position: relative;
         }
 
-        .novidade-item:hover {
+        .produto-card:hover {
             transform: translateY(-5px);
         }
 
-        .novidade-item img {
+        .produto-card .badge-menor {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #8b9a6e;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .produto-card img {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
         }
 
-        .novidade-item h4 {
-            padding: 15px 15px 5px;
-            color: #5d7a5c;
-            font-size: 1em;
-            min-height: 50px;
+        .produto-info {
+            padding: 15px;
         }
 
-        .novidade-item .preco {
-            padding: 0 15px;
+        .produto-info h4 {
+            color: #5d7a5c;
+            margin-bottom: 5px;
+            font-size: 1em;
+            min-height: 40px;
+        }
+
+        .produto-info .preco-menor {
+            font-size: 1.3em;
             color: #8b9a6e;
             font-weight: bold;
-            font-size: 1.2em;
+            margin: 10px 0;
         }
 
         .sem-produtos {
@@ -164,11 +162,11 @@
         }
 
         @media (max-width: 768px) {
-            .destaque-card {
+            .colecao-destaque {
                 grid-template-columns: 1fr;
             }
             
-            .novidades-grid {
+            .colecoes-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -190,9 +188,9 @@
     </div>
     <nav>
         <a href="index.html">Início</a>
-        <a href="novidades.html" class="active">Novidades</a>
+        <a href="novidades.html">Novidades</a>
         <a href="mais-vendidos.html">Mais Vendidos</a>
-        <a href="colecoes.html">Coleções</a>
+        <a href="colecoes.html" class="active">Coleções</a>
         <a href="sobre.html">Sobre Nós</a>
         <a href="contato.html">Contato</a>
         <a href="carrinho.html">🛒 <span id="carrinho-contador">0</span></a>
@@ -200,27 +198,25 @@
 </header>
 
 <main>
-    <section class="pagina-novidades">
-        <h2>✨ Novidades da Semana</h2>
-        <p class="subtitulo">Conheça as peças que acabaram de chegar!</p>
-        
-        <div class="destaque-semana" id="destaque-semana-container" style="display: none;">
-            <h3>🌟 Destaque da Semana</h3>
-            <div class="destaque-card">
-                <img id="destaque-img" src="" alt="Peça em destaque" onerror="this.src='imagens/placeholder.jpg'">
-                <div class="destaque-info">
-                    <h4 id="destaque-titulo"></h4>
-                    <p class="preco" id="destaque-preco"></p>
-                    <p class="descricao" id="destaque-descricao">Peça exclusiva que acaba de chegar.</p>
-                    <a id="destaque-whatsapp" href="#" target="_blank" class="btn-whatsapp-destaque">
-                        <i class="fab fa-whatsapp"></i> Garantir o meu
-                    </a>
-                </div>
+    <section class="pagina-colecoes">
+        <h2>📚 Nossas Coleções</h2>
+        <p class="subtitulo">Peças especiais agrupadas por estilo e material.</p>
+
+        <div class="colecao-destaque" id="colecao-destaque-container" style="display: none;">
+            <img id="destaque-img" src="" alt="Coleção em destaque" onerror="this.src='imagens/placeholder.jpg'">
+            <div class="colecao-info">
+                <span class="badge">📚 Coleção Especial</span>
+                <h3 id="destaque-titulo"></h3>
+                <p id="destaque-descricao">Peça exclusiva da nossa coleção.</p>
+                <div class="preco" id="destaque-preco"></div>
+                <a id="destaque-whatsapp" href="#" target="_blank" class="btn-whatsapp-produto">
+                    <i class="fab fa-whatsapp"></i> Garantir o meu
+                </a>
             </div>
         </div>
-        
-        <h3>🆕 Acabaram de Chegar</h3>
-        <div class="novidades-grid" id="novidades-grid"></div>
+
+        <h3>⭐ Outros itens da Coleção</h3>
+        <div class="colecoes-grid" id="colecoes-grid"></div>
     </section>
 </main>
 
@@ -267,29 +263,29 @@
         })
         .then(data => {
             const produtos = data.produtos || [];
-            const novidades = produtos.filter(p => p.destaque === 'novidade');
-            const grid = document.getElementById('novidades-grid');
+            const colecao = produtos.filter(p => p.destaque === 'colecao');
+            const grid = document.getElementById('colecoes-grid');
             
-            if (novidades.length === 0) {
-                grid.innerHTML = '<div class="sem-produtos">Nenhuma novidade cadastrada ainda.</div>';
+            if (colecao.length === 0) {
+                grid.innerHTML = '<div class="sem-produtos">Nenhum produto de coleção cadastrado ainda.</div>';
                 return;
             }
 
-            const destaque = novidades[0];
-            const outras = novidades.slice(1);
+            const destaque = colecao[0];
+            const outros = colecao.slice(1);
 
             if (destaque) {
-                document.getElementById('destaque-semana-container').style.display = 'block';
+                document.getElementById('colecao-destaque-container').style.display = 'grid';
                 document.getElementById('destaque-img').src = destaque.imagem || `imagens/produtos/${destaque.codigo}.jpg`;
                 document.getElementById('destaque-titulo').textContent = destaque.descricao;
                 document.getElementById('destaque-preco').textContent = `R$ ${destaque.preco}`;
                 
-                const mensagem = `Olá! Quero a NOVIDADE: ${destaque.descricao} (código ${destaque.codigo}) - R$ ${destaque.preco}`;
+                const mensagem = `Olá! Quero o produto da COLEÇÃO: ${destaque.descricao} (código ${destaque.codigo}) - R$ ${destaque.preco}`;
                 document.getElementById('destaque-whatsapp').href = `https://wa.me/5519996576067?text=${encodeURIComponent(mensagem)}`;
             }
 
             grid.innerHTML = '';
-            outras.forEach(p => {
+            outros.forEach(p => {
                 const imagem = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
                 const produto = {
                     codigo: p.codigo,
@@ -299,22 +295,25 @@
                 };
 
                 const card = `
-                <div class="novidade-item">
+                <div class="produto-card">
+                    <span class="badge-menor">📚 Coleção</span>
                     <img src="${imagem}" alt="${p.descricao}" onerror="this.src='imagens/placeholder.jpg'">
-                    <h4>${p.descricao}</h4>
-                    <p class="preco">R$ ${p.preco}</p>
-                    <button onclick='window.carrinho.adicionar(${JSON.stringify(produto)})' class="btn-carrinho">
-                        <i class="fas fa-cart-plus"></i> Adicionar
-                    </button>
+                    <div class="produto-info">
+                        <h4>${p.descricao}</h4>
+                        <div class="preco-menor">R$ ${p.preco}</div>
+                        <button onclick='window.carrinho.adicionar(${JSON.stringify(produto)})' class="btn-carrinho">
+                            <i class="fas fa-cart-plus"></i> Adicionar
+                        </button>
+                    </div>
                 </div>
                 `;
                 grid.innerHTML += card;
             });
         })
         .catch(erro => {
-            console.error('Erro ao carregar novidades:', erro);
-            document.getElementById('novidades-grid').innerHTML = 
-                '<div class="sem-produtos">Erro ao carregar novidades. Tente novamente mais tarde.</div>';
+            console.error('Erro ao carregar coleções:', erro);
+            document.getElementById('colecoes-grid').innerHTML = 
+                '<div class="sem-produtos">Erro ao carregar coleções. Tente novamente mais tarde.</div>';
         });
 </script>
 
