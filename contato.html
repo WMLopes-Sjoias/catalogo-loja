@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - WMLopes Acessórios e Semijoias</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header id="cabecalho">
+    <h1>✨ WMLopes Acessórios e Semijoias</h1>
+    
+    <div class="header-info">
+        <div class="header-info-item">
+            <i class="fas fa-truck"></i>
+            <span>Enviamos para todo Brasil</span>
+        </div>
+        <div class="header-info-item">
+            <i class="fas fa-clock"></i>
+            <span>Segunda a Sexta: 9h às 18h</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="novidades.html">Novidades</a>
+        <a href="mais-vendidos.html">Mais Vendidos</a>
+        <a href="colecoes.html">Coleções</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+</header>
+
+<main>
+    <section class="pagina-contato">
+        <h2>Entre em Contato</h2>
+        
+        <div class="contato-container">
+            <div class="contato-info">
+                <div class="contato-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Telefone</h3>
+                    <p>(19) 99657-6067</p>
+                </div>
+                
+                <div class="contato-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>E-mail</h3>
+                    <p>wilsonlopesjr@hotmail.com</p>
+                </div>
+                
+                <div class="contato-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>(19) 99657-6067</p>
+                    <a href="https://wa.me/5519996576067" target="_blank" class="btn-whatsapp-contato">
+                        <i class="fab fa-whatsapp"></i> Falar agora
+                    </a>
+                </div>
+                
+                <div class="contato-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Localização</h3>
+                    <p>Campinas - SP</p>
+                    <p>Atendimento online para todo Brasil</p>
+                </div>
+            </div>
+            
+            <div class="contato-form">
+                <h3>Envie uma mensagem</h3>
+                <form id="formContato">
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <input type="text" placeholder="Assunto">
+                    <textarea rows="5" placeholder="Sua mensagem"></textarea>
+                    <button type="submit" class="btn-enviar">Enviar mensagem</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- IMAGEM DE CAMPINAS (substitui o mapa) -->
+        <div class="cidade-container">
+            <h3>📍 Atendemos de Campinas/SP para todo o Brasil!</h3>
+            <div class="cidade-imagem">
+                <img src="imagens/campinas.jpg" alt="Campinas - SP" 
+                     onerror="this.src='imagens/placeholder-cidade.jpg'">
+                <p class="cidade-legenda">
+                    Nossa loja é online, mas nosso coração está em Campinas! 💚<br>
+                    Enviamos suas semijoias com todo carinho para qualquer lugar do país.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h4>WMLopes Acessórios e Semijoias</h4>
+            <p>Peças artesanais com a pureza da natureza</p>
+        </div>
+        <div>
+            <h4>Redes Sociais</h4>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/5519996576067" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Atendimento</h4>
+            <p>📞 (19) 99657-6067</p>
+            <p>✉️ wilsonlopesjr@hotmail.com</p>
+            <p>🕒 Seg-Sex: 9h às 18h</p>
+        </div>
+    </div>
+    <p style="margin-top: 30px;">© 2025 WMLopes Acessórios e Semijoias. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('cabecalho');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    document.getElementById('formContato')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Funcionalidade em desenvolvimento. Por enquanto, use o WhatsApp!');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "ultima_atualizacao": "10/03/2026 15:44",
+  "total_produtos": 1,
+  "produtos": [
+    {
+      "codigo": "2000000000780",
+      "descricao": "COLAR FIOS",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "48,39",
+      "imagem": "imagens/produtos/2000000000780.jpg"
+    }
+  ]
+}
