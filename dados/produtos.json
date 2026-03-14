@@ -1,24 +1,24 @@
 {
-  "ultima_atualizacao": "11/03/2026 12:40",
+  "ultima_atualizacao": "14/03/2026 19:18",
   "total_produtos": 2,
   "produtos": [
     {
-      "codigo": "2000000000755",
-      "descricao": "COLAR EM CERÂMICA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA",
-      "preco": "32,26",
-      "imagem": "imagens/produtos/2000000000755.jpg",
-      "destaque": "colecao"
-    },
-    {
-      "codigo": "2000000000780",
-      "descricao": "COLAR FIOS",
+      "codigo": "2000000000782",
+      "descricao": "COLAR TRANÇADO",
       "colecao": "GERAL",
       "categoria": "BIJOUTERIA",
-      "preco": "48,39",
-      "imagem": "imagens/produtos/2000000000780.jpg",
-      "destaque": ""
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000782.jpg",
+      "destaque": "novidade"
+    },
+    {
+      "codigo": "novidades",
+      "descricao": "COLAR TRANÇADO",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "32,26",
+      "imagem": "imagens/produtos/novidades.jpg",
+      "destaque": "novidade"
     }
   ]
 }
