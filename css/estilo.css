@@ -866,3 +866,32 @@ nav a[href="carrinho.html"] i {
     border-radius: 15px !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
 }
+
+/* ====== PÁGINA NOVIDADES ====== */
+.novidade-item img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+    object-fit: contain !important;
+    background-color: #f8f6f0 !important;
+    border-radius: 15px !important;
+}
+
+#destaque-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px !important;
+    object-fit: contain !important;
+    background-color: #f8f6f0 !important;
+    border-radius: 15px !important;
+}
+
+/* ====== PÁGINA SOBRE NÓS ====== */
+.modelo-item img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 350px !important;
+    object-fit: contain !important;
+    background-color: #f8f6f0 !important;
+    border-radius: 15px !important;
+}
