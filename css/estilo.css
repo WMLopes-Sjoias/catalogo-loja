@@ -194,22 +194,25 @@ section h2:after {
 }
 
 /* ========== IMAGENS DOS PRODUTOS ========== */
+/* ========== IMAGENS DOS PRODUTOS ========== */
 .imagens-produto {
     background: #f8f6f0;
     padding: 20px;
     border-bottom: 1px solid #e8e0d0;
 }
 
+/* Imagem principal */
 .imagem-principal {
     width: 100%;
-    height: 250px;
-    object-fit: contain;           /* Mostra a imagem inteira, sem cortes */
-    background-color: #f8f6f0;      /* Fundo neutro combinando com a área */
+    height: 250px;              /* Tamanho grande */
+    object-fit: contain;        /* Mostra a imagem inteira, sem cortes */
+    background-color: #f8f6f0;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: opacity 0.3s;
 }
 
+/* Miniaturas (3 imagens menores) */
 .miniaturas {
     display: flex;
     gap: 10px;
@@ -219,9 +222,9 @@ section h2:after {
 }
 
 .miniatura {
-    width: 60px;
+    width: 60px;                /* Tamanho pequeno */
     height: 60px;
-    object-fit: contain;           /* Mesmo tratamento: imagem inteira */
+    object-fit: contain;        /* Mostra a imagem inteira, sem cortes */
     background-color: #f8f6f0;
     border-radius: 10px;
     cursor: pointer;
