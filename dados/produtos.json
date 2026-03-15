@@ -10,15 +10,6 @@
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000782.jpg",
       "destaque": "novidade"
-    },
-    {
-      "codigo": "novidades",
-      "descricao": "COLAR TRANÇADO",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "32,26",
-      "imagem": "imagens/produtos/novidades.jpg",
-      "destaque": "novidade"
     }
   ]
 }
