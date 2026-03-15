@@ -75,7 +75,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background: #8b9a6e;
+            background: #ff6b6b;
             color: white;
             padding: 3px 10px;
             border-radius: 20px;
@@ -83,10 +83,6 @@
             font-weight: bold;
             z-index: 10;
         }
-
-        .badge.mais-vendido { background: #ffd700; color: #333; }
-        .badge.novidade { background: #ff6b6b; color: white; }
-        .badge.colecao { background: #8b9a6e; color: white; }
 
         .btn-carrinho {
             background: #5d7a5c;
@@ -107,22 +103,6 @@
 
         .btn-carrinho i {
             margin-right: 5px;
-        }
-
-        .btn-whatsapp {
-            display: block;
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 25px;
-            text-align: center;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            background: #128C7E;
         }
 
         .sem-produtos {
@@ -157,8 +137,6 @@
     <nav>
         <a href="index.html" class="active">Início</a>
         <a href="novidades.html">Novidades</a>
-        <a href="mais-vendidos.html">Mais Vendidos</a>
-        <a href="colecoes.html">Coleções</a>
         <a href="sobre.html">Sobre Nós</a>
         <a href="contato.html">Contato</a>
         <a href="carrinho.html">
@@ -215,7 +193,6 @@
         }
     });
 
-    // 🔥 CARREGAR TODOS OS PRODUTOS DO JSON
     fetch('dados/produtos.json')
     .then(response => {
         if (!response.ok) throw new Error('Erro ao carregar produtos');
@@ -233,18 +210,14 @@
         grid.innerHTML = '';
 
         produtos.forEach(p => {
+            // 🔥 SELO APENAS PARA NOVIDADES
             let badge = '';
-            if (p.destaque === 'mais-vendido') {
-                badge = '<span class="badge mais-vendido">🔥 Mais Vendido</span>';
-            } else if (p.destaque === 'novidade') {
-                badge = '<span class="badge novidade">🆕 Novidade</span>';
-            } else if (p.destaque === 'colecao') {
-                badge = '<span class="badge colecao">📚 Coleção</span>';
+            if (p.destaque === 'novidade') {
+                badge = '<span class="badge">🆕 Novidade</span>';
             }
 
             const imagem = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
             
-            // 🔥 Verificar se existem imagens secundárias
             let miniaturas = '';
             for (let i = 1; i <= 3; i++) {
                 miniaturas += `<img src="imagens/produtos/${p.codigo}-${i}.jpg" class="miniatura" style="display:none;" onload="this.style.display='inline-block'">`;
