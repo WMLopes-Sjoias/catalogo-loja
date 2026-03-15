@@ -787,7 +787,8 @@ nav a[href="carrinho.html"] i {
 
 .imagem-principal {
     width: 100%;
-    height: 450px;
+    height: auto;
+    max-height: 450px;
     object-fit: scale-down;
     background-color: #f8f6f0;
     border-radius: 15px;
@@ -847,4 +848,21 @@ nav a[href="carrinho.html"] i {
     height: 20px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* ====== PRIORIDADE MÁXIMA PARA AS IMAGENS ====== */
+.imagens-produto {
+    height: auto !important;
+    min-height: 300px !important;
+    overflow: visible !important;
+}
+
+.imagem-principal {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 450px !important;
+    object-fit: contain !important;
+    background-color: #f8f6f0 !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
 }
