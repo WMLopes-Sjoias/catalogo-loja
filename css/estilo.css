@@ -7,9 +7,10 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #faf7f2;  /* Tom de papel reciclado */
+    background: #faf7f2;
     color: #3a3a3a;
     line-height: 1.6;
+    padding-top: 160px;
 }
 
 /* ========== CABEÇALHO FIXO ========== */
@@ -27,7 +28,6 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Efeito quando rola a página */
 header.scrolled {
     padding: 10px 20px;
     background: linear-gradient(135deg, #4a6249 0%, #728558 100%);
@@ -42,7 +42,6 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Informações extras no cabeçalho */
 .header-info {
     display: flex;
     justify-content: center;
@@ -67,7 +66,6 @@ header h1 {
     color: white;
 }
 
-/* Menu de navegação */
 nav {
     margin-top: 10px;
 }
@@ -89,15 +87,46 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* Ajuste do conteúdo principal (por causa do cabeçalho fixo) */
-body {
-    padding-top: 160px;  /* Altura do cabeçalho */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #faf7f2;
-    color: #3a3a3a;
-    line-height: 1.6;
+/* ========== CARRINHO DESTACADO ========== */
+nav a[href="carrinho.html"] {
+    background: #ffd700 !important;
+    color: #2c3e50 !important;
+    font-weight: bold;
+    border-radius: 30px !important;
+    padding: 8px 15px !important;
+    margin-left: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
+nav a[href="carrinho.html"]:hover {
+    background: #f1c40f !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+nav a[href="carrinho.html"] i {
+    color: #2c3e50 !important;
+    margin-right: 5px;
+}
+
+#carrinho-contador {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    margin-left: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* ========== RESPONSIVIDADE DO CABEÇALHO ========== */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.5em;
@@ -109,7 +138,7 @@ body {
     }
     
     body {
-        padding-top: 200px;  /* Ajuste para mobile */
+        padding-top: 200px;
     }
     
     nav a {
@@ -145,12 +174,12 @@ section h2:after {
 
 #produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
 }
 
 /* ========== CARD DO PRODUTO ========== */
-.produto-container {
+.produto-card {
     background: white;
     border-radius: 20px;
     overflow: hidden;
@@ -159,13 +188,13 @@ section h2:after {
     border: 1px solid rgba(139, 154, 110, 0.2);
 }
 
-.produto-container:hover {
+.produto-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(93, 122, 92, 0.2);
 }
 
-/* ========== GALERIA DE IMAGENS ========== */
-.galeria {
+/* ========== IMAGENS DOS PRODUTOS ========== */
+.imagens-produto {
     background: #f8f6f0;
     padding: 20px;
     border-bottom: 1px solid #e8e0d0;
@@ -173,8 +202,9 @@ section h2:after {
 
 .imagem-principal {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: 250px;
+    object-fit: contain;           /* Mostra a imagem inteira, sem cortes */
+    background-color: #f8f6f0;      /* Fundo neutro combinando com a área */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: opacity 0.3s;
@@ -189,9 +219,10 @@ section h2:after {
 }
 
 .miniatura {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;           /* Mesmo tratamento: imagem inteira */
+    background-color: #f8f6f0;
     border-radius: 10px;
     cursor: pointer;
     border: 3px solid transparent;
@@ -206,65 +237,89 @@ section h2:after {
 }
 
 /* ========== INFORMAÇÕES DO PRODUTO ========== */
-.info {
-    padding: 25px;
+.produto-info {
+    padding: 20px;
 }
 
-.info h3 {
+.produto-info h4 {
     color: #5d7a5c;
-    font-size: 1.4em;
-    margin-bottom: 15px;
-    font-weight: 500;
-    border-left: 4px solid #8b9a6e;
-    padding-left: 15px;
-}
-
-.info p {
-    margin: 10px 0;
-    color: #555;
-    font-size: 1.1em;
-}
-
-.info p strong {
-    color: #5d7a5c;
+    font-size: 1.2em;
+    margin-bottom: 5px;
     font-weight: 600;
-    min-width: 80px;
-    display: inline-block;
 }
 
-.preco {
-    font-size: 1.6em !important;
-    color: #5d7a5c !important;
-    font-weight: bold !important;
-    margin: 15px 0 !important;
-    background: #f0f3ea;
-    padding: 10px 15px;
-    border-radius: 10px;
-    text-align: center;
+.produto-info .preco {
+    font-size: 1.4em;
+    color: #8b9a6e;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
-/* ========== BOTÃO DE COMPRA (WhatsApp) ========== */
-.btn-whatsapp {
+/* ========== BOTÃO ADICIONAR AO CARRINHO ========== */
+.btn-carrinho {
+    background: #5d7a5c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background 0.3s;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-carrinho:hover {
+    background: #4a6249;
+}
+
+.btn-carrinho i {
+    margin-right: 5px;
+}
+
+/* ========== BOTÃO WHATSAPP ========== */
+.btn-whatsapp-produto {
     display: inline-block;
     background: #25D366;
     color: white;
     text-decoration: none;
-    padding: 15px 30px;
+    padding: 12px 20px;
     border-radius: 30px;
     margin-top: 20px;
     font-weight: bold;
     transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1em;
     width: 100%;
     text-align: center;
 }
 
-.btn-whatsapp:hover {
+.btn-whatsapp-produto:hover {
     background: #128C7E;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-produto i {
+    margin-right: 8px;
+}
+
+/* ========== NOTIFICAÇÃO DO CARRINHO ========== */
+.notificacao-carrinho {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #27ae60;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
 /* ========== RODAPÉ ========== */
@@ -300,78 +355,6 @@ footer {
 
 .social-links a:hover {
     color: #d4c9a6;
-}
-
-/* ========== RESPONSIVIDADE ========== */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-    
-    nav a {
-        display: inline-block;
-        margin: 5px;
-        padding: 6px 15px;
-        font-size: 0.9em;
-    }
-    
-    #produtos {
-        grid-template-columns: 1fr;
-    }
-    
-    .imagem-principal {
-        height: 250px;
-    }
-    
-    .miniatura {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .info h3 {
-        font-size: 1.2em;
-    }
-}
-
-/* ========== UTILITÁRIOS ========== */
-.text-center {
-    text-align: center;
-}
-
-.mt-20 {
-    margin-top: 20px;
-}
-
-.mb-20 {
-    margin-bottom: 20px;
-}
-
-/* ========== BOTÃO WHATSAPP NO PRODUTO ========== */
-.btn-whatsapp-produto {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    margin-top: 20px;
-    font-weight: bold;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    width: 100%;
-    text-align: center;
-}
-
-.btn-whatsapp-produto:hover {
-    background: #128C7E;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-}
-
-.btn-whatsapp-produto i {
-    margin-right: 8px;
 }
 
 /* ========== PÁGINA DE CONTATO ========== */
@@ -411,11 +394,6 @@ footer {
 .contato-card h3 {
     color: #5d7a5c;
     margin-bottom: 10px;
-}
-
-.contato-card p {
-    color: #555;
-    margin: 5px 0;
 }
 
 .btn-whatsapp-contato {
@@ -466,132 +444,6 @@ footer {
     background: #4a6249;
 }
 
-.mapa-container {
-    margin-top: 40px;
-}
-
-.mapa-container h3 {
-    color: #5d7a5c;
-    margin-bottom: 20px;
-}
-
-.mapa {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* ========== PÁGINA SOBRE ========== */
-.pagina-sobre {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.sobre-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin: 40px 0;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(93, 122, 92, 0.1);
-}
-
-.sobre-imagem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.sobre-texto {
-    padding: 40px;
-}
-
-.sobre-texto h3 {
-    color: #5d7a5c;
-    margin: 20px 0 10px;
-}
-
-.sobre-texto h3:first-of-type {
-    margin-top: 0;
-}
-
-.sobre-texto p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.sobre-texto ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sobre-texto ul li {
-    margin: 10px 0;
-    color: #555;
-}
-
-.valores-container {
-    text-align: center;
-    margin-top: 60px;
-}
-
-.valores-container h3 {
-    color: #5d7a5c;
-    margin-bottom: 40px;
-}
-
-.valores-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.valor-item {
-    text-align: center;
-    padding: 20px;
-}
-
-.valor-item i {
-    font-size: 3em;
-    color: #8b9a6e;
-    margin-bottom: 15px;
-}
-
-.valor-item h4 {
-    color: #5d7a5c;
-    margin-bottom: 10px;
-}
-
-.valor-item p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* ========== RESPONSIVIDADE ========== */
-@media (max-width: 768px) {
-    .contato-container,
-    .sobre-container,
-    .valores-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contato-info {
-        grid-template-columns: 1fr;
-    }
-    
-    .sobre-texto {
-        padding: 20px;
-    }
-    
-    .valores-grid {
-        gap: 20px;
-    }
-}
-
 /* ========== IMAGEM DE CAMPINAS ========== */
 .cidade-container {
     text-align: center;
@@ -625,23 +477,12 @@ footer {
     font-style: italic;
 }
 
-/* ========== GRID DE MODELOS ========== */
-.sobre-imagens {
-    padding: 40px;
-    background: #f8f6f0;
-}
-
-.sobre-imagens h3 {
-    color: #5d7a5c;
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.5em;
-}
-
+/* ========== PÁGINA SOBRE (MODELOS) ========== */
 .modelos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
+    margin-top: 30px;
 }
 
 .modelo-item {
@@ -673,183 +514,31 @@ footer {
     font-size: 1.1em;
 }
 
-/* ========== AJUSTES RESPONSIVOS ========== */
+/* ========== RESPONSIVIDADE GERAL ========== */
 @media (max-width: 768px) {
-    .sobre-imagens {
-        padding: 20px;
+    #produtos {
+        grid-template-columns: 1fr;
     }
     
-    .modelos-grid {
+    .imagem-principal {
+        height: 200px;
+    }
+    
+    .miniatura {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .contato-container,
+    .sobre-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contato-info {
         grid-template-columns: 1fr;
     }
     
     .modelo-item img {
         height: 250px;
     }
-    
-    .cidade-container {
-        margin: 30px 0;
-        padding: 20px;
-    }
-    
-    .cidade-container h3 {
-        font-size: 1.2em;
-    }
-}
-
-/* Ícone do carrinho */
-nav a i {
-    margin-right: 5px;
-}
-
-#carrinho-contador {
-    background: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.7em;
-    margin-left: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 18px;
-    height: 18px;
-}
-
-/* Botão adicionar ao carrinho */
-.btn-carrinho {
-    background: #5d7a5c;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background 0.3s;
-    margin-top: 10px;
-    width: 100%;
-}
-
-.btn-carrinho:hover {
-    background: #4a6249;
-}
-
-.btn-carrinho i {
-    margin-right: 5px;
-}
-
-/* Notificação */
-.notificacao-carrinho {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #27ae60;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    z-index: 9999;
-    animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-/* Ícone do carrinho destacado */
-nav a[href="carrinho.html"] {
-    color: #ffd700 !important;
-    font-weight: bold;
-}
-
-nav a[href="carrinho.html"] i {
-    color: #ffd700;
-}
-
-#carrinho-contador {
-    background: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.7em;
-    margin-left: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 18px;
-    height: 18px;
-}
-
-.imagens-produto {
-    position: relative;
-}
-
-.imagem-principal {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.miniaturas {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-}
-
-.miniatura {
-    width: 60px !important;
-    height: 60px !important;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.3s;
-    display: inline-block !important;
-}
-
-.miniatura:hover {
-    border-color: #5d7a5c;
-    transform: scale(1.05);
-}
-
-/* 🛒 CARRINHO DESTACADO */
-nav a[href="carrinho.html"] {
-    background: #ffd700 !important;        /* Fundo dourado */
-    color: #2c3e50 !important;              /* Texto escuro */
-    font-weight: bold;
-    border-radius: 30px !important;         /* Botão arredondado */
-    padding: 8px 15px !important;
-    margin-left: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra */
-    transition: all 0.3s ease;
-}
-
-nav a[href="carrinho.html"]:hover {
-    background: #f1c40f !important;         /* Mais escuro no hover */
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-nav a[href="carrinho.html"] i {
-    color: #2c3e50 !important;               /* Ícone escuro */
-    margin-right: 5px;
-}
-
-#carrinho-contador {
-    background: #e74c3c !important;         /* Vermelho vivo */
-    color: white !important;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.8em;
-    margin-left: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 20px;
-    height: 20px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
