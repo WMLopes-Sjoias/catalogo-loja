@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "17/03/2026 10:06",
-  "total_produtos": 6,
+  "ultima_atualizacao": "17/03/2026 10:34",
+  "total_produtos": 7,
   "produtos": [
     {
       "codigo": "2000000000753",
@@ -45,6 +45,15 @@
       "categoria": "CERÂMICA",
       "preco": "98,00",
       "imagem": "imagens/produtos/2000000000769.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000760",
+      "descricao": "COLAR CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "139,00",
+      "imagem": "imagens/produtos/2000000000760.jpg",
       "destaque": ""
     },
     {
