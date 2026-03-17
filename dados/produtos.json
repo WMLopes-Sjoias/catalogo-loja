@@ -1,7 +1,16 @@
 {
-  "ultima_atualizacao": "16/03/2026 23:47",
-  "total_produtos": 1,
+  "ultima_atualizacao": "16/03/2026 23:52",
+  "total_produtos": 2,
   "produtos": [
+    {
+      "codigo": "2000000000753",
+      "descricao": "COLAR CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "180,00",
+      "imagem": "imagens/produtos/2000000000753.jpg",
+      "destaque": ""
+    },
     {
       "codigo": "2000000000782",
       "descricao": "COLAR TRANÇADO",
