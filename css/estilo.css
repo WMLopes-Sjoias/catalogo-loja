@@ -44,12 +44,7 @@ header h1 {
 
 /* Informações extras no cabeçalho */
 .header-info {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 10px 0;
-    flex-wrap: wrap;
-    font-size: 0.95em;
+    display: none !important;
 }
 
 .header-info-item {
