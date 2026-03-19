@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "19/03/2026 11:21",
+  "ultima_atualizacao": "19/03/2026 11:30",
   "total_produtos": 10,
   "produtos": [
     {
@@ -90,7 +90,7 @@
       "categoria": "BIJOUTERIA",
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000072.jpg",
-      "destaque": ""
+      "destaque": "novidade"
     }
   ]
 }
