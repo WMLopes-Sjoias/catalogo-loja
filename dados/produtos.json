@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "19/03/2026 11:30",
-  "total_produtos": 10,
+  "ultima_atualizacao": "20/03/2026 11:11",
+  "total_produtos": 14,
   "produtos": [
     {
       "codigo": "2000000000753",
@@ -34,7 +34,7 @@
       "descricao": "COLAR CERÂMICA",
       "colecao": "GERAL",
       "categoria": "CERÂMICA",
-      "preco": "180,00",
+      "preco": "160,00",
       "imagem": "imagens/produtos/2000000000755.jpg",
       "destaque": ""
     },
@@ -54,6 +54,42 @@
       "categoria": "CERÂMICA",
       "preco": "139,00",
       "imagem": "imagens/produtos/2000000000760.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000619",
+      "descricao": "COLAR CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "160,00",
+      "imagem": "imagens/produtos/2000000000619.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000622",
+      "descricao": "COLAR CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "120,00",
+      "imagem": "imagens/produtos/2000000000622.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000096",
+      "descricao": "COLAR CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "89,00",
+      "imagem": "imagens/produtos/2000000000096.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000788",
+      "descricao": "COLAR CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "80,00",
+      "imagem": "imagens/produtos/2000000000788.jpg",
       "destaque": ""
     },
     {
