@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "20/03/2026 11:11",
-  "total_produtos": 14,
+  "ultima_atualizacao": "20/03/2026 15:56",
+  "total_produtos": 17,
   "produtos": [
     {
       "codigo": "2000000000753",
@@ -93,6 +93,24 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000762",
+      "descricao": "COLAR CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "98,00",
+      "imagem": "imagens/produtos/2000000000762.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000761",
+      "descricao": "COLAR CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "195,00",
+      "imagem": "imagens/produtos/2000000000761.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000044",
       "descricao": "COLAR RESINA",
       "colecao": "GERAL",
@@ -127,6 +145,15 @@
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000072.jpg",
       "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000783",
+      "descricao": "GARGANTILHA CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "90,00",
+      "imagem": "imagens/produtos/2000000000783.jpg",
+      "destaque": ""
     }
   ]
 }
