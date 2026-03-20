@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "20/03/2026 16:05",
+  "ultima_atualizacao": "20/03/2026 16:08",
   "total_produtos": 17,
   "produtos": [
     {
@@ -102,15 +102,6 @@
       "destaque": ""
     },
     {
-      "codigo": "2000000000761",
-      "descricao": "COLAR CERÂMICA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA",
-      "preco": "195,00",
-      "imagem": "imagens/produtos/2000000000761.jpg",
-      "destaque": ""
-    },
-    {
       "codigo": "2000000000044",
       "descricao": "COLAR RESINA",
       "colecao": "GERAL",
@@ -145,6 +136,15 @@
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000072.jpg",
       "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000761",
+      "descricao": "CONJUNTO CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "195,00",
+      "imagem": "imagens/produtos/2000000000761.jpg",
+      "destaque": ""
     },
     {
       "codigo": "2000000000783",
