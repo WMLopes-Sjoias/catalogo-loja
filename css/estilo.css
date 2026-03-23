@@ -1,11 +1,11 @@
-/* RESET */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* CORES */
+/* VARIÁVEIS DE CORES */
 :root {
   --verde-principal: #2F4F3E;
   --terracota: #B35C3A;
@@ -54,7 +54,7 @@ nav a:hover {
 }
 
 /* BOTÕES */
-button {
+button, .btn {
   background-color: var(--terracota);
   color: white;
   border: none;
@@ -64,11 +64,11 @@ button {
   border-radius: 4px;
 }
 
-button:hover {
+button:hover, .btn:hover {
   background-color: var(--terracota-hover);
 }
 
-/* SEÇÃO */
+/* SEÇÕES */
 section {
   padding: 40px 20px;
 }
@@ -93,7 +93,7 @@ footer {
   font-size: 14px;
 }
 
-/* MOBILE */
+/* RESPONSIVO (MOBILE) */
 @media (max-width: 768px) {
   header {
     padding: 8px 15px;
