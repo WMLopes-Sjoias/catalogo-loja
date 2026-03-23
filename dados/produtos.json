@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "22/03/2026 21:12",
+  "ultima_atualizacao": "22/03/2026 21:35",
   "total_produtos": 18,
   "produtos": [
     {
@@ -36,15 +36,6 @@
       "categoria": "CERÂMICA",
       "preco": "160,00",
       "imagem": "imagens/produtos/2000000000755.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000769",
-      "descricao": "COLAR CERÂMICA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA",
-      "preco": "98,00",
-      "imagem": "imagens/produtos/2000000000769.jpg",
       "destaque": ""
     },
     {
@@ -162,6 +153,15 @@
       "categoria": "CERÂMICA",
       "preco": "64,52",
       "imagem": "imagens/produtos/2000000000000000.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000000",
+      "descricao": "PEÇA TESTE 01",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "32,26",
+      "imagem": "imagens/produtos/2000000000000.jpg",
       "destaque": ""
     }
   ]
