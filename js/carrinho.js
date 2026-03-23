@@ -101,11 +101,12 @@ class Carrinho {
         setTimeout(() => notificacao.remove(), 3000);
     }
 
-    // Gerar mensagem do WhatsApp com todos os itens
+    // Gerar mensagem do WhatsApp com todos os itens (INCLUINDO CÓDIGO DO PRODUTO)
     gerarMensagemWhatsApp() {
         let mensagem = "🛒 *PEDIDO WMLOPES*\n\n";
         this.itens.forEach(item => {
-            mensagem += `• ${item.nome} (${item.quantidade}x) - R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
+            // 🔥 ADICIONADO: código do produto entre colchetes
+            mensagem += `• ${item.nome} [${item.codigo}] (${item.quantidade}x) - R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
         });
         mensagem += `\n💰 *TOTAL: R$ ${this.total.toFixed(2)}*`;
         return encodeURIComponent(mensagem);

@@ -65,6 +65,12 @@
             font-size: 1.2em;
         }
 
+        .item-info .codigo-produto {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 5px;
+        }
+
         .item-acoes {
             display: flex;
             flex-direction: column;
@@ -284,6 +290,7 @@
                     <div class="item-info">
                         <h4>${item.nome}</h4>
                         <div class="preco">R$ ${item.preco}</div>
+                        <div class="codigo-produto">Código: ${item.codigo}</div>
                     </div>
                     <div class="item-acoes">
                         <div class="quantidade">
