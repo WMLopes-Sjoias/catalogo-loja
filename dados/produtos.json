@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "22/03/2026 21:35",
-  "total_produtos": 18,
+  "ultima_atualizacao": "22/03/2026 21:40",
+  "total_produtos": 17,
   "produtos": [
     {
       "codigo": "2000000000753",
@@ -144,15 +144,6 @@
       "categoria": "CERÂMICA",
       "preco": "90,00",
       "imagem": "imagens/produtos/2000000000783.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000000000",
-      "descricao": "PEÇA TESTE",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA",
-      "preco": "64,52",
-      "imagem": "imagens/produtos/2000000000000000.jpg",
       "destaque": ""
     },
     {
