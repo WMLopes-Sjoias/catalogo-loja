@@ -30,7 +30,6 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Efeito quando rola a página */
 header.scrolled {
     padding: 10px 20px;
     background: linear-gradient(135deg, #4a6249 0%, #728558 100%);
@@ -47,7 +46,6 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Subtítulo "Cerâmica Autoral" */
 .subtitulo-cabecalho {
     font-size: 1.1em;
     font-weight: 400;
@@ -59,12 +57,10 @@ header h1 {
     font-family: 'Quicksand', sans-serif;
 }
 
-/* Informações extras no cabeçalho */
 .header-info {
     display: none !important;
 }
 
-/* Menu de navegação */
 nav {
     margin-top: 10px;
 }
@@ -88,7 +84,6 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* Ajuste do conteúdo principal (por causa do cabeçalho fixo) */
 body {
     padding-top: 150px;
 }
@@ -115,7 +110,7 @@ body {
     }
 }
 
-/* ========== TÍTULOS DE SEÇÃO (TODAS AS PÁGINAS UNIFICADAS) ========== */
+/* ========== TÍTULOS DE SEÇÃO (PADRÃO) ========== */
 section h2,
 .pagina-sobre h2,
 .pagina-contato h2 {
@@ -139,8 +134,29 @@ section h2:after,
     margin-top: 2px;
 }
 
-/* ========== AJUSTE NO CELULAR ========== */
+/* ========== TÍTULOS REDUZIDOS PARA INÍCIO E NOVIDADES ========== */
+.pagina-inicial h2,
+.pagina-novidades h2 {
+    font-size: 1.3em !important;
+    margin-bottom: 6px !important;
+    margin-top: 6px !important;
+    padding: 0 !important;
+}
+
+.pagina-inicial h2:after,
+.pagina-novidades h2:after {
+    font-size: 1em !important;
+    margin-top: 0 !important;
+}
+
 @media (max-width: 768px) {
+    .pagina-inicial h2,
+    .pagina-novidades h2 {
+        font-size: 1.1em !important;
+        margin-bottom: 4px !important;
+        margin-top: 4px !important;
+    }
+    
     section h2,
     .pagina-sobre h2,
     .pagina-contato h2 {
@@ -873,36 +889,4 @@ nav a[href="carrinho.html"] i {
     object-fit: contain !important;
     background-color: #f8f6f0 !important;
     border-radius: 15px !important;
-}
-
-/* ====== FORÇAR TAMANHO DOS TÍTULOS EM TODAS AS PÁGINAS ====== */
-section h2,
-.pagina-inicial h2,
-.pagina-novidades h2,
-.pagina-sobre h2,
-.pagina-contato h2 {
-    font-size: 1.5em !important;
-    margin-bottom: 12px !important;
-    margin-top: 12px !important;
-}
-
-section h2:after,
-.pagina-inicial h2:after,
-.pagina-novidades h2:after,
-.pagina-sobre h2:after,
-.pagina-contato h2:after {
-    font-size: 1.1em !important;
-    margin-top: 2px !important;
-}
-
-@media (max-width: 768px) {
-    section h2,
-    .pagina-inicial h2,
-    .pagina-novidades h2,
-    .pagina-sobre h2,
-    .pagina-contato h2 {
-        font-size: 1.3em !important;
-        margin-bottom: 8px !important;
-        margin-top: 8px !important;
-    }
 }
