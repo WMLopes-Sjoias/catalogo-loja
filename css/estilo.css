@@ -47,7 +47,7 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* 🔥 NOVO: Subtítulo "Cerâmica Autoral" */
+/* Subtítulo "Cerâmica Autoral" */
 .subtitulo-cabecalho {
     font-size: 1.1em;
     font-weight: 400;
@@ -62,21 +62,6 @@ header h1 {
 /* Informações extras no cabeçalho */
 .header-info {
     display: none !important;
-}
-
-.header-info-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.header-info-item i {
-    font-size: 1.2em;
-    color: #d4c9a6;
-}
-
-.header-info-item span {
-    color: white;
 }
 
 /* Menu de navegação */
@@ -130,18 +115,14 @@ body {
     }
 }
 
-/* ========== SEÇÃO DE PRODUTOS ========== */
-section {
-    max-width: 1400px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-section h2 {
+/* ========== TÍTULOS DE SEÇÃO (TODAS AS PÁGINAS UNIFICADAS) ========== */
+section h2,
+.pagina-sobre h2,
+.pagina-contato h2 {
     text-align: center;
     color: #5d7a5c;
     font-family: 'Quicksand', sans-serif;
-    font-size: 1.5em;           /* 🔥 menor que o título (2.2em) */
+    font-size: 1.5em;
     margin-bottom: 12px;
     margin-top: 12px;
     font-weight: 500;
@@ -149,11 +130,38 @@ section h2 {
     position: relative;
 }
 
-section h2:after {
+section h2:after,
+.pagina-sobre h2:after,
+.pagina-contato h2:after {
     content: "🌿";
     display: block;
     font-size: 1.1em;
     margin-top: 2px;
+}
+
+/* ========== AJUSTE NO CELULAR ========== */
+@media (max-width: 768px) {
+    section h2,
+    .pagina-sobre h2,
+    .pagina-contato h2 {
+        font-size: 1.3em;
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+    
+    section h2:after,
+    .pagina-sobre h2:after,
+    .pagina-contato h2:after {
+        font-size: 1em;
+        margin-top: 2px;
+    }
+}
+
+/* ========== SEÇÃO DE PRODUTOS ========== */
+section {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 #produtos {
@@ -314,43 +322,6 @@ footer {
 
 .social-links a:hover {
     color: #d4c9a6;
-}
-
-/* ========== RESPONSIVIDADE ========== */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-    
-    nav a {
-        display: inline-block;
-        margin: 5px;
-        padding: 6px 15px;
-        font-size: 0.9em;
-    }
-    
-    #produtos {
-        grid-template-columns: 1fr;
-    }
-    
-    .imagem-principal {
-        height: 250px;
-    }
-    
-    .miniatura {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .info h3 {
-        font-size: 1.2em;
-    }
-
-    section h2 {
-    font-size: 1.5em;    /* ainda menor no celular */
-    margin-bottom: 10px;
-    margin-top: 10px;
-    }
 }
 
 /* ========== UTILITÁRIOS ========== */
@@ -787,20 +758,6 @@ nav a[href="carrinho.html"] {
 
 nav a[href="carrinho.html"] i {
     color: #ffd700;
-}
-
-#carrinho-contador {
-    background: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.7em;
-    margin-left: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 18px;
-    height: 18px;
 }
 
 .imagens-produto {
