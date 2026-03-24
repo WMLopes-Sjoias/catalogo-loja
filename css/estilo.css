@@ -42,6 +42,17 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
+/* 🔥 NOVO: Subtítulo "Cerâmica Autoral" */
+.subtitulo-cabecalho {
+    font-size: 1.1em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: -5px;
+    margin-bottom: 8px;
+    color: #d4c9a6;
+    font-style: italic;
+}
+
 /* Informações extras no cabeçalho */
 .header-info {
     display: none !important;
@@ -97,13 +108,19 @@ body {
     header h1 {
         font-size: 1.3em;
     }
+
+    .subtitulo-cabecalho {
+        font-size: 0.9em;
+        margin-top: 2px;
+        margin-bottom: 5px;
+    }
     
     .header-info {
         display: none;
     }
     
     body {
-        padding-top: 220px;  /* Ajuste para mobile */
+        padding-top: 180px;  /* 🔥 Ajuste para caber o subtítulo */
     }
     
     nav a {
@@ -120,11 +137,13 @@ section {
     padding: 0 20px;
 }
 
+/* 🔥 TÍTULOS DAS SEÇÕES COM ALTURA REDUZIDA */
 section h2 {
     text-align: center;
     color: #5d7a5c;
-    font-size: 2.2em;
-    margin-bottom: 40px;
+    font-size: 2em;          /* Reduzido de 2.2em */
+    margin-bottom: 20px;     /* Reduzido de 40px */
+    margin-top: 20px;        /* Adicionado para compensar */
     font-weight: 300;
     letter-spacing: 1px;
     position: relative;
@@ -133,8 +152,8 @@ section h2 {
 section h2:after {
     content: "🌿";
     display: block;
-    font-size: 1.5em;
-    margin-top: 10px;
+    font-size: 1.3em;        /* Reduzido de 1.5em */
+    margin-top: 5px;         /* Reduzido de 10px */
 }
 
 #produtos {
@@ -142,6 +161,8 @@ section h2:after {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
 }
+
+/* (O restante do CSS permanece igual) */
 
 /* ========== CARD DO PRODUTO ========== */
 .produto-container {

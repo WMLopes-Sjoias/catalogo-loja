@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WMLopes</title>
+    <title>WMLopes Acessórios e Semijoias</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -123,7 +123,9 @@
 <body>
 
 <header id="cabecalho">
-    <h1>✨ WMLopes</h1>
+    <h1>✨ WMLopes Acessórios e Semijoias</h1>
+    <!-- 🔥 NOVO SUBTÍTULO -->
+    <p class="subtitulo-cabecalho">Cerâmica Autoral</p>
     <div class="header-info">
         <div class="header-info-item">
             <i class="fas fa-truck"></i>
@@ -166,9 +168,10 @@
         <div>
             <h4>Redes Sociais</h4>
             <div class="social-links">
-                <a href="https://www.instagram.com/wm__lopes/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/wilsonlopespratas" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="https://wa.me/5519996576067" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
             </div>
         </div>
         <div>
@@ -178,7 +181,7 @@
             <p>🕒 Seg-Sex: 9h às 18h</p>
         </div>
     </div>
-    <p style="margin-top: 30px;">© 2026 WMLopes Acessórios e Semijoias. Todos os direitos reservados.</p>
+    <p style="margin-top: 30px;">© 2025 WMLopes Acessórios e Semijoias. Todos os direitos reservados.</p>
 </footer>
 
 <script src="js/carrinho.js"></script>
@@ -209,7 +212,6 @@
         grid.innerHTML = '';
 
         produtos.forEach(p => {
-            // 🔥 SELO APENAS PARA NOVIDADES
             let badge = '';
             if (p.destaque === 'novidade') {
                 badge = '<span class="badge">🆕 Novidade</span>';
