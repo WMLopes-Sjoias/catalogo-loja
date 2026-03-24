@@ -1,3 +1,6 @@
+/* ========== IMPORTAÇÃO DAS FONTES ========== */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 /* ========== ESTILO GERAL ========== */
 * {
     margin: 0;
@@ -6,8 +9,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Benedict, Geneva, Verdana, sans-serif;
-    background: #faf7f2;  /* Tom de papel reciclado */
+    font-family: 'Quicksand', 'Segoe UI', sans-serif;
+    background: #faf7f2;
     color: #94452B;
     line-height: 1.6;
 }
@@ -35,23 +38,25 @@ header.scrolled {
 }
 
 header h1 {
-    color: #94452B;   /* 🔥 Terracota */
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    color: #94452B;
     font-size: 2.2em;
     margin-bottom: 5px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Sombra suave para destaque */
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 /* 🔥 NOVO: Subtítulo "Cerâmica Autoral" */
 .subtitulo-cabecalho {
     font-size: 1.1em;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1px;
     margin-top: -5px;
     margin-bottom: 8px;
     color: #d4c9a6;
     font-style: italic;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /* Informações extras no cabeçalho */
@@ -89,6 +94,8 @@ nav a {
     transition: all 0.3s;
     font-size: 1em;
     display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
 }
 
 nav a:hover {
@@ -98,11 +105,7 @@ nav a:hover {
 
 /* Ajuste do conteúdo principal (por causa do cabeçalho fixo) */
 body {
-    padding-top: 150px;  /* Altura do cabeçalho */
-    font-family: 'Segoe UI', Benedict, Geneva, Verdana, sans-serif;
-    background: #faf7f2;
-    color: #94452B;
-    line-height: 1.6;
+    padding-top: 150px;
 }
 
 @media (max-width: 768px) {
@@ -116,12 +119,8 @@ body {
         margin-bottom: 5px;
     }
     
-    .header-info {
-        display: none;
-    }
-    
     body {
-        padding-top: 180px;  /* 🔥 Ajuste para caber o subtítulo */
+        padding-top: 180px;
     }
     
     nav a {
@@ -138,23 +137,23 @@ section {
     padding: 0 20px;
 }
 
-/* 🔥 TÍTULOS DAS SEÇÕES COM ALTURA REDUZIDA */
 section h2 {
     text-align: center;
     color: #5d7a5c;
-    font-size: 2em;          /* Reduzido de 2.2em */
-    margin-bottom: 20px;     /* Reduzido de 40px */
-    margin-top: 20px;        /* Adicionado para compensar */
-    font-weight: 300;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 500;
     letter-spacing: 1px;
     position: relative;
+    font-family: 'Quicksand', sans-serif;
 }
 
 section h2:after {
     content: "🌿";
     display: block;
-    font-size: 1.3em;        /* Reduzido de 1.5em */
-    margin-top: 5px;         /* Reduzido de 10px */
+    font-size: 1.3em;
+    margin-top: 5px;
 }
 
 #produtos {
@@ -162,8 +161,6 @@ section h2:after {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
 }
-
-/* (O restante do CSS permanece igual) */
 
 /* ========== CARD DO PRODUTO ========== */
 .produto-container {
@@ -230,9 +227,10 @@ section h2:after {
     color: #5d7a5c;
     font-size: 1.4em;
     margin-bottom: 15px;
-    font-weight: 500;
+    font-weight: 600;
     border-left: 4px solid #8b9a6e;
     padding-left: 15px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .info p {
@@ -744,6 +742,8 @@ nav a i {
     transition: background 0.3s;
     margin-top: 10px;
     width: 100%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
 }
 
 .btn-carrinho:hover {
@@ -829,29 +829,29 @@ nav a[href="carrinho.html"] i {
 
 /* 🛒 CARRINHO DESTACADO */
 nav a[href="carrinho.html"] {
-    background: #ffd700 !important;        /* Fundo dourado */
-    color: #2c3e50 !important;              /* Texto escuro */
+    background: #ffd700 !important;
+    color: #2c3e50 !important;
     font-weight: bold;
-    border-radius: 30px !important;         /* Botão arredondado */
+    border-radius: 30px !important;
     padding: 8px 15px !important;
     margin-left: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
 nav a[href="carrinho.html"]:hover {
-    background: #f1c40f !important;         /* Mais escuro no hover */
+    background: #f1c40f !important;
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 nav a[href="carrinho.html"] i {
-    color: #2c3e50 !important;               /* Ícone escuro */
+    color: #2c3e50 !important;
     margin-right: 5px;
 }
 
 #carrinho-contador {
-    background: #e74c3c !important;         /* Vermelho vivo */
+    background: #e74c3c !important;
     color: white !important;
     border-radius: 50%;
     padding: 2px 6px;
