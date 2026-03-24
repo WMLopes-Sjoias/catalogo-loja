@@ -86,10 +86,10 @@ nav a:hover {
 
 /* Ajuste do conteúdo principal (por causa do cabeçalho fixo) */
 body {
-    padding-top: 160px;  /* Altura do cabeçalho */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 150px;  /* Altura do cabeçalho */
+    font-family: 'Segoe UI', Benedict, Geneva, Verdana, sans-serif;
     background: #faf7f2;
-    color: #3a3a3a;
+    color: #94452B;
     line-height: 1.6;
 }
 
