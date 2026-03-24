@@ -305,6 +305,18 @@ section {
     box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
 }
 
+/* ========== BOTÕES DO SITE (NOVA FONTE) ========== */
+.btn-carrinho,
+.btn-whatsapp-produto,
+.btn-finalizar,
+.btn-continuar,
+.btn-enviar,
+.btn-whatsapp-contato {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
 /* ========== RODAPÉ ========== */
 footer {
     background: #3a4a39;
@@ -735,7 +747,7 @@ nav a i {
     transition: background 0.3s;
     margin-top: 10px;
     width: 100%;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Caveat', cursive;
     font-weight: 600;
 }
 
@@ -889,4 +901,25 @@ nav a[href="carrinho.html"] i {
     object-fit: contain !important;
     background-color: #f8f6f0 !important;
     border-radius: 15px !important;
+}
+
+/* ========== ANIMAÇÃO DA FOLHA AO VENTO ========== */
+@keyframes folhaAoVento {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.fa-leaf {
+    animation: folhaAoVento 3s ease-in-out infinite;
+    display: inline-block;
 }
