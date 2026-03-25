@@ -920,6 +920,7 @@ nav a[href="carrinho.html"] i {
 }
 
 .fa-leaf {
+    color: #2c5e2e;  /* verde mais escuro */
     animation: folhaAoVento 3s ease-in-out infinite;
     display: inline-block;
 }
