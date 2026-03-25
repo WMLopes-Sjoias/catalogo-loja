@@ -1,7 +1,52 @@
 {
-  "ultima_atualizacao": "24/03/2026 20:30",
-  "total_produtos": 18,
+  "ultima_atualizacao": "25/03/2026 11:43",
+  "total_produtos": 23,
   "produtos": [
+    {
+      "codigo": "2000000000775",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "39,90",
+      "imagem": "imagens/produtos/2000000000775.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000773",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "29,90",
+      "imagem": "imagens/produtos/2000000000773.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000772",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "29,90",
+      "imagem": "imagens/produtos/2000000000772.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000770",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "68,00",
+      "imagem": "imagens/produtos/2000000000770.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000757",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "76,00",
+      "imagem": "imagens/produtos/2000000000757.jpg",
+      "destaque": ""
+    },
     {
       "codigo": "2000000000753",
       "descricao": "COLAR CERÂMICA",
