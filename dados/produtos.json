@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "25/03/2026 11:43",
-  "total_produtos": 23,
+  "ultima_atualizacao": "26/03/2026 10:55",
+  "total_produtos": 30,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -45,6 +45,69 @@
       "categoria": "CERÂMICA",
       "preco": "76,00",
       "imagem": "imagens/produtos/2000000000757.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000320",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "45,00",
+      "imagem": "imagens/produtos/2000000000320.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000764",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "45,00",
+      "imagem": "imagens/produtos/2000000000764.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000759",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "39,90",
+      "imagem": "imagens/produtos/2000000000759.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000771",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "53,00",
+      "imagem": "imagens/produtos/2000000000771.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000765",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "46,00",
+      "imagem": "imagens/produtos/2000000000765.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000758",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "58,00",
+      "imagem": "imagens/produtos/2000000000758.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000756",
+      "descricao": "BRINCOS CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "73,00",
+      "imagem": "imagens/produtos/2000000000756.jpg",
       "destaque": ""
     },
     {
