@@ -1,65 +1,406 @@
-function doGet(e) {
-  // Verifica se recebeu os parâmetros
-  if (!e || !e.parameter) {
-    return ContentService.createTextOutput("❌ Parâmetros não informados");
-  }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - WMLopes</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .pagina-carrinho {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
-  var total = e.parameter.total;
-  var descricao = e.parameter.descricao || "Compra no site WMLopes";
+        .pagina-carrinho h2 {
+            color: #5d7a5c;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-  if (!total) {
-    return ContentService.createTextOutput("❌ Total não informado");
-  }
+        .carrinho-vazio {
+            text-align: center;
+            padding: 60px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
 
-  // 🔥 SEU TOKEN DE PRODUÇÃO
-  var token = "02540c13-e53a-4c0e-a1d4-d5da4e609548199a04284b1f977a64359faa71af8d1e64e9-3d7e-4ae5-806d-f74c8603f106";
-  var email = "wilsonlopesjr@hotmail.com";
+        .carrinho-vazio i {
+            font-size: 4em;
+            color: #8b9a6e;
+            margin-bottom: 20px;
+        }
 
-  // Formata o total (usa ponto, não vírgula)
-  var totalFormatado = parseFloat(total).toFixed(2);
+        .carrinho-item {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            gap: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            align-items: center;
+        }
 
-  // Dados do pagamento
-  var dados = {
-    email: email,
-    token: token,
-    currency: "BRL",
-    itemId1: "1",
-    itemDescription1: descricao.substring(0, 100),
-    itemAmount1: totalFormatado,
-    itemQuantity1: "1",
-    itemWeight1: "0",
-    reference: "pedido_" + new Date().getTime(),
-    redirectURL: "https://WMLopes-Sjoias.github.io/catalogo-loja/obrigado.html",
-    notificationURL: ""
-  };
+        .carrinho-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
 
-  // Converte para formato URL-encoded
-  var payload = Object.keys(dados).map(key => key + "=" + encodeURIComponent(dados[key])).join("&");
+        .item-info h4 {
+            color: #5d7a5c;
+            margin-bottom: 5px;
+        }
 
-  var options = {
-    method: "post",
-    payload: payload,
-    muteHttpExceptions: true
-  };
+        .item-info .preco {
+            color: #8b9a6e;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
 
-  // 🔥 URL DE PRODUÇÃO (PagSeguro real)
-  var url = "https://ws.pagseguro.uol.com.br/v2/checkout";
+        .item-info .codigo-produto {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 5px;
+        }
 
-  try {
-    var response = UrlFetchApp.fetch(url, options);
-    var xml = response.getContentText();
-    
-    // Extrai o código do checkout
-    var codeMatch = xml.match(/<code>(.*?)<\/code>/);
-    if (codeMatch && codeMatch[1]) {
-      var checkoutCode = codeMatch[1];
-      var linkPagamento = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" + checkoutCode;
-      return ContentService.createTextOutput(linkPagamento);
-    } else {
-      // Se não encontrou código, retorna o XML completo para debug
-      return ContentService.createTextOutput("❌ Erro: código não encontrado. Resposta: " + xml);
+        .item-acoes {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .quantidade {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f0f3ea;
+            padding: 5px 10px;
+            border-radius: 25px;
+        }
+
+        .quantidade button {
+            background: #5d7a5c;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+
+        .quantidade button:hover {
+            background: #4a6249;
+        }
+
+        .quantidade span {
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .btn-remover {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .carrinho-resumo {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .resumo-linha {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .resumo-linha.total {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #5d7a5c;
+            border-bottom: none;
+            margin-top: 10px;
+        }
+
+        .botoes-pagamento {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-pagseguro {
+            flex: 1;
+            background: #00a650;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-pagseguro:hover {
+            background: #008c44;
+        }
+
+        .btn-whatsapp-finalizar {
+            flex: 1;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn-whatsapp-finalizar:hover {
+            background: #128C7E;
+        }
+
+        .btn-continuar {
+            display: block;
+            background: #f0f3ea;
+            color: #5d7a5c;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 30px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .btn-continuar:hover {
+            background: #e0e3da;
+        }
+
+        @media (max-width: 768px) {
+            .carrinho-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .item-acoes {
+                align-items: center;
+            }
+
+            .quantidade {
+                justify-content: center;
+            }
+
+            .botoes-pagamento {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header id="cabecalho">
+    <h1><i class="fas fa-leaf"></i> WMLopes</h1>
+    <div class="header-info">
+        <div class="header-info-item">
+            <i class="fas fa-truck"></i>
+            <span>Enviamos para todo Brasil</span>
+        </div>
+        <div class="header-info-item">
+            <i class="fas fa-clock"></i>
+            <span>Segunda a Sexta: 9h às 18h</span>
+        </div>
+    </div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="novidades.html">Novidades</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contato.html">Contato</a>
+        <a href="carrinho.html" class="active">
+            🛒 <span id="carrinho-contador">0</span>
+        </a>
+    </nav>
+</header>
+
+<main>
+    <section class="pagina-carrinho">
+        <h2><i class="fas fa-shopping-cart"></i> Meu Carrinho</h2>
+        
+        <div id="carrinho-conteudo">
+            <!-- Conteúdo carregado via JavaScript -->
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h4>WMLopes</h4>
+            <p>Peças artesanais com a pureza da natureza</p>
+        </div>
+        <div>
+            <h4>Redes Sociais</h4>
+            <div class="social-links">
+                <a href="https://www.instagram.com/wm__lopes/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/wilsonlopespratas" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/5519996576067" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Atendimento</h4>
+            <p>📞 (19) 99657-6067</p>
+            <p>✉️ wilsonlopesjr@hotmail.com</p>
+            <p>🕒 Seg-Sex: 9h às 18h</p>
+        </div>
+    </div>
+    <p style="margin-top: 30px;">© 2026 Wilson Lopes Junior. Todos os direitos reservados.</p>
+</footer>
+
+<script src="js/carrinho.js"></script>
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('cabecalho');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // 🔥 URL ATUALIZADA DO SCRIPT
+    function finalizarPagamento() {
+        const total = window.carrinho.total;
+        if (total <= 0) {
+            alert("Carrinho vazio!");
+            return;
+        }
+
+        const descricao = "Pedido WMLopes - " + new Date().toLocaleString();
+        const url = "https://script.google.com/macros/s/AKfycbyvc7Q6uedfpW0Fcs2Wt86uRkcsXQtu2EuNDSPMnqnqichmB3XaoPzoKeExeACDU4HL/exec?total=" + total.toFixed(2) + "&descricao=" + encodeURIComponent(descricao);
+
+        // Mostra mensagem de carregamento
+        const btn = document.querySelector('.btn-pagseguro');
+        const textoOriginal = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando pagamento...';
+        btn.disabled = true;
+
+        fetch(url)
+            .then(response => response.text())
+            .then(link => {
+                if (link.includes("https://sandbox.pagseguro.uol.com.br") || link.includes("https://pagseguro.uol.com.br")) {
+                    window.location.href = link;
+                } else {
+                    alert("Erro ao gerar pagamento: " + link);
+                    btn.innerHTML = textoOriginal;
+                    btn.disabled = false;
+                }
+            })
+            .catch(err => {
+                alert("Erro na integração: " + err.message);
+                btn.innerHTML = textoOriginal;
+                btn.disabled = false;
+            });
     }
-  } catch (err) {
-    return ContentService.createTextOutput("❌ Erro na integração: " + err.toString());
-  }
-}
+
+    function carregarCarrinho() {
+        const conteudo = document.getElementById('carrinho-conteudo');
+        const itens = window.carrinho.itens;
+        
+        if (itens.length === 0) {
+            conteudo.innerHTML = `
+                <div class="carrinho-vazio">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Seu carrinho está vazio</h3>
+                    <p>Adicione produtos para começar suas compras!</p>
+                    <a href="index.html" class="btn-continuar" style="display: inline-block; padding: 10px 30px; margin-top: 20px;">
+                        Continuar Comprando
+                    </a>
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+        itens.forEach(item => {
+            html += `
+                <div class="carrinho-item">
+                    <img src="${item.imagem || 'imagens/placeholder.jpg'}" alt="${item.nome}">
+                    <div class="item-info">
+                        <h4>${item.nome}</h4>
+                        <div class="preco">R$ ${item.preco}</div>
+                        <div class="codigo-produto">Código: ${item.codigo}</div>
+                    </div>
+                    <div class="item-acoes">
+                        <div class="quantidade">
+                            <button onclick="window.carrinho.atualizarQuantidade('${item.codigo}', ${item.quantidade - 1})">-</button>
+                            <span>${item.quantidade}</span>
+                            <button onclick="window.carrinho.atualizarQuantidade('${item.codigo}', ${item.quantidade + 1})">+</button>
+                        </div>
+                        <button onclick="window.carrinho.remover('${item.codigo}')" class="btn-remover">
+                            <i class="fas fa-trash"></i> Remover
+                        </button>
+                    </div>
+                </div>
+            `;
+        });
+
+        html += `
+            <div class="carrinho-resumo">
+                <div class="resumo-linha">
+                    <span>Subtotal:</span>
+                    <span>R$ ${window.carrinho.total.toFixed(2)}</span>
+                </div>
+                <div class="resumo-linha total">
+                    <span>Total:</span>
+                    <span>R$ ${window.carrinho.total.toFixed(2)}</span>
+                </div>
+                <div class="botoes-pagamento">
+                    <button onclick="finalizarPagamento()" class="btn-pagseguro">
+                        <i class="fas fa-credit-card"></i> Pagar com Cartão/Pix
+                    </button>
+                    <a href="https://wa.me/5519996576067?text=${window.carrinho.gerarMensagemWhatsApp()}" 
+                       target="_blank" class="btn-whatsapp-finalizar">
+                        <i class="fab fa-whatsapp"></i> Falar com atendente
+                    </a>
+                </div>
+                <a href="index.html" class="btn-continuar">
+                    Continuar Comprando
+                </a>
+            </div>
+        `;
+
+        conteudo.innerHTML = html;
+    }
+
+    window.carregarCarrinho = carregarCarrinho;
+    carregarCarrinho();
+</script>
+
+</body>
+</html>
