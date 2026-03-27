@@ -261,7 +261,7 @@
 <footer>
     <div class="footer-content">
         <div>
-            <h4>WMLopes Acessórios e Semijoias</h4>
+            <h4>WMLopes</h4>
             <p>Peças artesanais com a pureza da natureza</p>
         </div>
         <div>
@@ -279,7 +279,7 @@
             <p>🕒 Seg-Sex: 9h às 18h</p>
         </div>
     </div>
-    <p style="margin-top: 30px;">© 2026 Wilson Lopes Junior. Todos os direitos reservados.</p>
+    <p style="margin-top: 30px;">© 2026 WMLopes. Todos os direitos reservados.</p>
 </footer>
 
 <script src="js/carrinho.js"></script>
@@ -293,7 +293,7 @@
         }
     });
 
-    // Função para finalizar com PagSeguro
+    // 🔥 URL ATUALIZADA DO PAGSEGURO
     function finalizarPagamento() {
         const total = window.carrinho.total;
         if (total <= 0) {
@@ -302,7 +302,7 @@
         }
 
         const descricao = "Pedido WMLopes - " + new Date().toLocaleString();
-        const url = "https://script.google.com/macros/s/AKfycbxEzulw6TtcETtqJxBqBEXcBDlsB72szgvN6OoP1l0NDv6zJoPyqxf_MOXORQIWgq-W/exec?total=" + total.toFixed(2) + "&descricao=" + encodeURIComponent(descricao);
+        const url = "https://script.google.com/macros/s/AKfycby-icaSOCYO7eWuGAnqE82zxFBcAQHz_czd0OTDLQOn_tZ9LnPScOhjoKidMTjq3X54/exec?total=" + total.toFixed(2) + "&descricao=" + encodeURIComponent(descricao);
 
         // Mostra mensagem de carregamento
         const btn = document.querySelector('.btn-pagseguro');
@@ -313,7 +313,7 @@
         fetch(url)
             .then(response => response.text())
             .then(link => {
-                if (link.startsWith("https://sandbox.pagseguro.uol.com.br")) {
+                if (link.includes("https://sandbox.pagseguro.uol.com.br") || link.includes("https://pagseguro.uol.com.br")) {
                     window.location.href = link;
                 } else {
                     alert("Erro ao gerar pagamento: " + link);
