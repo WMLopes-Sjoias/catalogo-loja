@@ -293,7 +293,7 @@
         }
     });
 
-    // 🔥 URL ATUALIZADA DO SCRIPT
+    // 🔥 URL DO SCRIPT (ATUALIZADA)
     function finalizarPagamento() {
         const total = window.carrinho.total;
         if (total <= 0) {
@@ -302,7 +302,7 @@
         }
 
         const descricao = "Pedido WMLopes - " + new Date().toLocaleString();
-        const url = "https://script.google.com/macros/s/AKfycbyvc7Q6uedfpW0Fcs2Wt86uRkcsXQtu2EuNDSPMnqnqichmB3XaoPzoKeExeACDU4HL/exec?total=" + total.toFixed(2) + "&descricao=" + encodeURIComponent(descricao);
+        const url = "https://script.google.com/macros/s/AKfycbyhFJcZxz69PilYpbOsbKUy6isbZkvvqza8hsgamcPsZSFymocq6UoDE1N9K9If3A63/exec?total=" + total.toFixed(2) + "&descricao=" + encodeURIComponent(descricao);
 
         // Mostra mensagem de carregamento
         const btn = document.querySelector('.btn-pagseguro');
