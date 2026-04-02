@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "26/03/2026 10:59",
-  "total_produtos": 30,
+  "ultima_atualizacao": "02/04/2026 12:20",
+  "total_produtos": 25,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -9,15 +9,6 @@
       "categoria": "CERÂMICA",
       "preco": "39,90",
       "imagem": "imagens/produtos/2000000000775.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000773",
-      "descricao": "BRINCOS CERÂMICA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA",
-      "preco": "29,90",
-      "imagem": "imagens/produtos/2000000000773.jpg",
       "destaque": ""
     },
     {
@@ -66,15 +57,6 @@
       "destaque": ""
     },
     {
-      "codigo": "2000000000759",
-      "descricao": "BRINCOS CERÂMICA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA",
-      "preco": "39,90",
-      "imagem": "imagens/produtos/2000000000759.jpg",
-      "destaque": ""
-    },
-    {
       "codigo": "2000000000771",
       "descricao": "BRINCOS CERÂMICA",
       "colecao": "GERAL",
@@ -90,15 +72,6 @@
       "categoria": "CERÂMICA",
       "preco": "46,00",
       "imagem": "imagens/produtos/2000000000765.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000758",
-      "descricao": "BRINCOS CERÂMICA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA",
-      "preco": "58,00",
-      "imagem": "imagens/produtos/2000000000758.jpg",
       "destaque": ""
     },
     {
@@ -165,15 +138,6 @@
       "destaque": ""
     },
     {
-      "codigo": "2000000000622",
-      "descricao": "COLAR CERÂMICA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA",
-      "preco": "80,00",
-      "imagem": "imagens/produtos/2000000000622.jpg",
-      "destaque": ""
-    },
-    {
       "codigo": "2000000000096",
       "descricao": "COLAR CERÂMICA",
       "colecao": "GERAL",
@@ -216,15 +180,6 @@
       "categoria": "BIJOUTERIA",
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000191.jpg",
-      "destaque": "novidade"
-    },
-    {
-      "codigo": "2000000000782",
-      "descricao": "COLAR TRANÇADO",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000782.jpg",
       "destaque": "novidade"
     },
     {
