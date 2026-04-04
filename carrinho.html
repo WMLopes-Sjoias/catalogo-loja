@@ -49,10 +49,6 @@
 <script>
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-function salvarCarrinho() {
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-}
-
 function renderizar() {
     const lista = document.getElementById("lista");
     let total = 0;
@@ -81,7 +77,7 @@ function renderizar() {
     document.getElementById("total").innerText = "Total: R$ " + total.toFixed(2);
 }
 
-// 🔥 LIMPAR CARRINHO (COM REDIRECIONAMENTO)
+// 🔴 LIMPAR CARRINHO + REDIRECIONAR
 function limparCarrinho() {
     if (confirm("Deseja esvaziar o carrinho?")) {
         localStorage.removeItem("carrinho");
@@ -90,7 +86,7 @@ function limparCarrinho() {
     }
 }
 
-// 🔥 PAGAMENTO VIA GOOGLE SCRIPT (SEM CORS)
+// 🟢 PAGAMENTO VIA GOOGLE SCRIPT (FUNCIONANDO)
 async function finalizarCompra() {
 
     if (carrinho.length === 0) {
@@ -99,10 +95,9 @@ async function finalizarCompra() {
     }
 
     const total = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
-
     const descricao = "Pedido WMLopes - " + new Date().toLocaleString();
 
-    const url = "https://script.google.com/macros/s/AKfycbx2bJuI842Ol5WZmPpNRFpe6aOw1F034f_oe5-rLcMyEoppSsypxwVOfm2N6msABlxL/exec"
+    const url = "https://script.google.com/macros/s/AKfycbx0aZT8USBIY0chg4qkGyzsAQ8bcfXGqJ9yWQHJEPd_76aj98o2EFWafpJ1cTjLan1i/exec"
         + "?total=" + total.toFixed(2)
         + "&descricao=" + encodeURIComponent(descricao);
 
@@ -116,7 +111,7 @@ async function finalizarCompra() {
         const response = await fetch(url);
         const link = await response.text();
 
-        console.log("Resposta do script:", link);
+        console.log("Resposta do Google Script:", link);
 
         if (link.includes("pagseguro")) {
             window.location.href = link;
@@ -127,14 +122,13 @@ async function finalizarCompra() {
         }
 
     } catch (erro) {
-        console.error("Erro:", erro);
+        console.error(erro);
         alert("Erro na integração: " + erro.message);
         btn.innerHTML = textoOriginal;
         btn.disabled = false;
     }
 }
 
-// 🔥 INICIALIZA
 renderizar();
 </script>
 
