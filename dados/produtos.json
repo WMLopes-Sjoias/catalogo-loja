@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "29/04/2026 10:48",
-  "total_produtos": 29,
+  "ultima_atualizacao": "29/04/2026 11:12",
+  "total_produtos": 30,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -217,6 +217,15 @@
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000242.jpg",
       "destaque": ""
+    },
+    {
+      "codigo": "2000000000782",
+      "descricao": "COLAR TRANÇADO",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000782.jpg",
+      "destaque": "novidade"
     },
     {
       "codigo": "2000000000072",
