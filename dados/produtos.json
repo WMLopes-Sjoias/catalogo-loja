@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "13/04/2026 11:13",
-  "total_produtos": 28,
+  "ultima_atualizacao": "29/04/2026 10:40",
+  "total_produtos": 29,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -208,6 +208,15 @@
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000191.jpg",
       "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000242",
+      "descricao": "COLAR RESINA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "60,00",
+      "imagem": "imagens/produtos/2000000000242.jpg",
+      "destaque": ""
     },
     {
       "codigo": "2000000000072",
