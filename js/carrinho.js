@@ -103,7 +103,7 @@ class Carrinho {
 
     // Gerar mensagem do WhatsApp com todos os itens (INCLUINDO CÓDIGO DO PRODUTO)
     gerarMensagemWhatsApp() {
-        let mensagem = "🛒 *PEDIDO WMLOPES*\n\n";
+        let mensagem = "🛒 *PEDIDO TERRÁLI*\n\n";
         this.itens.forEach(item => {
             // 🔥 ADICIONADO: código do produto entre colchetes
             mensagem += `• ${item.nome} [${item.codigo}] (${item.quantidade}x) - R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
