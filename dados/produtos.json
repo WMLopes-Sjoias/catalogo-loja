@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "30/04/2026 11:42",
-  "total_produtos": 34,
+  "ultima_atualizacao": "01/05/2026 12:09",
+  "total_produtos": 37,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -192,6 +192,24 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000430",
+      "descricao": "COLAR ESSÊNCIA DA FLORESTA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000430.jpg",
+      "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000649",
+      "descricao": "COLAR ESSÊNCIA DA TERRA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000649.jpg",
+      "destaque": "novidade"
+    },
+    {
       "codigo": "2000000000429",
       "descricao": "COLAR FOGO E TERRA",
       "colecao": "GERAL",
@@ -217,6 +235,15 @@
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000414.jpg",
       "destaque": ""
+    },
+    {
+      "codigo": "2000000000510",
+      "descricao": "COLAR OCEANO E AREIA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000510.jpg",
+      "destaque": "novidade"
     },
     {
       "codigo": "2000000000044",
