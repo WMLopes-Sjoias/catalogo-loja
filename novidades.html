@@ -7,188 +7,29 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .pagina-novidades {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
+        /* Estilos específicos desta página */
+        .pagina-novidades { max-width: 1200px; margin: 40px auto; padding: 20px; }
+        .pagina-novidades h2 { color: #5d7a5c; text-align: center; font-size: 2.5em; }
+        .destaque-card { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; 
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(93, 122, 92, 0.2); margin: 40px 0;
         }
-
-        .pagina-novidades h2 {
-            color: #5d7a5c;
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .pagina-novidades .subtitulo {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-            font-size: 1.2em;
-        }
-
-        .destaque-semana {
-            margin-bottom: 60px;
-        }
-
-        .destaque-semana h3 {
-            color: #5d7a5c;
-            margin-bottom: 20px;
-        }
-
-        .destaque-card {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(93, 122, 92, 0.2);
-        }
-
-        .destaque-card img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .destaque-info {
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .destaque-info h4 {
-            font-size: 1.8em;
-            color: #5d7a5c;
-            margin-bottom: 15px;
-        }
-
-        .destaque-info .preco {
-            font-size: 2.2em;
-            color: #8b9a6e;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .destaque-info .descricao {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .btn-whatsapp-destaque {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: all 0.3s;
-            width: fit-content;
-        }
-
-        .btn-whatsapp-destaque:hover {
-            background: #128C7E;
-        }
-
-        .btn-carrinho {
-            background: #5d7a5c;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: background 0.3s;
-            margin-top: 10px;
-            width: 100%;
-        }
-
-        .btn-carrinho:hover {
-            background: #4a6249;
-        }
-
-        .btn-carrinho i {
-            margin-right: 5px;
-        }
-
-        .novidades-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .novidade-item {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .novidade-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .novidade-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .novidade-item h4 {
-            padding: 15px 15px 5px;
-            color: #5d7a5c;
-            font-size: 1em;
-            min-height: 50px;
-        }
-
-        .novidade-item .preco {
-            padding: 0 15px;
-            color: #8b9a6e;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .sem-produtos {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 40px;
-            color: #666;
-            font-size: 1.2em;
-        }
-
-        @media (max-width: 768px) {
-            .destaque-card {
-                grid-template-columns: 1fr;
-            }
-            
-            .novidades-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        .destaque-card img { width: 100%; height: 400px; object-fit: cover; }
+        .destaque-info { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .novidades-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .novidade-item { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .novidade-item:hover { transform: translateY(-5px); }
+        .novidade-item img { width: 100%; height: 250px; object-fit: cover; }
+        .novidade-item h4 { padding: 15px 15px 5px; color: #5d7a5c; }
+        .btn-whatsapp-destaque { background: #25D366; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; width: fit-content; }
+        @media (max-width: 768px) { .destaque-card, .novidades-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <header id="cabecalho">
     <h1><i class="fas fa-leaf"></i> Terráli<sup>™</sup></h1>
-    <p class="subtitulo-cabecalho">Sua Joia em Cerâmica Autoral</p>
-    <div class="header-info">
-        <div class="header-info-item">
-            <i class="fas fa-truck"></i>
-            <span>Enviamos para todo Brasil</span>
-        </div>
-        <div class="header-info-item">
-            <i class="fas fa-clock"></i>
-            <span>Segunda a Sexta: 9h às 18h</span>
-        </div>
-    </div>
     <nav>
         <a href="index.html">Início</a>
         <a href="novidades.html" class="active">Novidades</a>
@@ -198,124 +39,65 @@
     </nav>
 </header>
 
-<main>
-    <section class="pagina-novidades">
-        <h2>✨ Novidades da Semana</h2>
-        <p class="subtitulo">Conheça as peças que acabaram de chegar!</p>
-        
-        <div class="destaque-semana" id="destaque-semana-container" style="display: none;">
-            <h3>🌟 Destaque da Semana</h3>
-            <div class="destaque-card">
-                <img id="destaque-img" src="" alt="Peça em destaque" onerror="this.src='imagens/placeholder.jpg'">
-                <div class="destaque-info">
-                    <h4 id="destaque-titulo"></h4>
-                    <p class="preco" id="destaque-preco"></p>
-                    <p class="descricao" id="destaque-descricao">Peça exclusiva que acaba de chegar.</p>
-                    <a id="destaque-whatsapp" href="#" target="_blank" class="btn-whatsapp-destaque">
-                        <i class="fab fa-whatsapp"></i> Garantir o meu
-                    </a>
-                </div>
+<main class="pagina-novidades">
+    <h2>✨ Novidades da Semana</h2>
+    
+    <div id="destaque-semana-container" style="display: none;">
+        <h3>🌟 Destaque</h3>
+        <div class="destaque-card">
+            <img id="destaque-img" src="" alt="">
+            <div class="destaque-info">
+                <div id="destaque-cabecalho"></div>
+                <p class="preco" id="destaque-preco" style="font-size: 2em; color: #8b9a6e; margin: 15px 0; font-weight: bold;"></p>
+                <a id="destaque-whatsapp" href="#" target="_blank" class="btn-whatsapp-destaque">
+                    <i class="fab fa-whatsapp"></i> Garantir o meu
+                </a>
             </div>
-        </div>
-        
-        <h3>🆕 Acabaram de Chegar</h3>
-        <div class="novidades-grid" id="novidades-grid"></div>
-    </section>
-</main>
-
-<footer>
-    <div class="footer-content">
-        <div>
-            <h4>Terráli<sup>™</sup></h4>
-            <p>Peças artesanais com a pureza da natureza</p>
-        </div>
-        <div>
-            <h4>Redes Sociais</h4>
-            <div class="social-links">
-                <a href="https://www.instagram.com/terrali_ceramicas/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <!-- a href="https://www.facebook.com/profile.php?id=wilsonlopespratas" target="_blank"><i class="fab fa-facebook"></i></a> -->
-                <a href="https://wa.me/5519996576067" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-        <div>
-            <h4>Atendimento</h4>
-            <p>📞 (19) 99657-6067</p>
-            <p>✉️ terrali.atendimento@gmail.com</p>
-            <p>🕒 Seg-Sex: 9h às 18h</p>
         </div>
     </div>
-    <p style="margin-top: 30px;">2026 Wilson Lopes Junior. Terráli<sup>™</sup></p>
-</footer>
     
+    <h3>🆕 Recém Chegadas</h3>
+    <div class="novidades-grid" id="novidades-grid"></div>
+</main>
+
 <script src="js/carrinho.js"></script>
 <script>
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('cabecalho');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
     fetch('dados/produtos.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Erro ao carregar produtos');
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
-            const produtos = data.produtos || [];
-            const novidades = produtos.filter(p => p.destaque === 'novidade');
+            const novidades = data.produtos.filter(p => p.destaque === 'novidade');
             const grid = document.getElementById('novidades-grid');
             
-            if (novidades.length === 0) {
-                grid.innerHTML = '<div class="sem-produtos">Nenhuma novidade cadastrada ainda.</div>';
-                return;
-            }
-
-            const destaque = novidades[0];
-            const outras = novidades.slice(1);
-
-            if (destaque) {
+            if (novidades.length > 0) {
+                // Configura Destaque
+                const d = novidades[0];
                 document.getElementById('destaque-semana-container').style.display = 'block';
-                document.getElementById('destaque-img').src = destaque.imagem || `imagens/produtos/${destaque.codigo}.jpg`;
-                document.getElementById('destaque-titulo').textContent = destaque.descricao;
-                document.getElementById('destaque-preco').textContent = `R$ ${destaque.preco}`;
-                
-                const mensagem = `Olá! Quero a NOVIDADE: ${destaque.descricao} (código ${destaque.codigo}) - R$ ${destaque.preco}`;
-                document.getElementById('destaque-whatsapp').href = `https://wa.me/5519996576067?text=${encodeURIComponent(mensagem)}`;
-            }
-
-            grid.innerHTML = '';
-            outras.forEach(p => {
-                const imagem = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
-                const produto = {
-                    codigo: p.codigo,
-                    nome: p.descricao,
-                    preco: parseFloat(p.preco.replace(',', '.')),
-                    imagem: imagem
-                };
-
-                const card = `
-                <div class="novidade-item">
-                    <img src="${imagem}" alt="${p.descricao}" onerror="this.src='imagens/placeholder.jpg'">
-                    <h4>${p.descricao}</h4>
-                    <p class="preco">R$ ${p.preco}</p>
-                    <button onclick='window.carrinho.adicionar(${JSON.stringify(produto)})' class="btn-carrinho">
-                        <i class="fas fa-cart-plus"></i> Adicionar
-                    </button>
-                </div>
+                document.getElementById('destaque-img').src = d.imagem || `imagens/produtos/${d.codigo}.jpg`;
+                document.getElementById('destaque-cabecalho').innerHTML = `
+                    <h4 style="font-size: 1.8em; color: #5d7a5c; margin-bottom: 5px;">${d.descricao}</h4>
+                    <span class="categoria-principal" style="display: block; margin-bottom: 10px;">${d.categoria || 'Cerâmica Autoral'}</span>
                 `;
-                grid.innerHTML += card;
-            });
-        })
-        .catch(erro => {
-            console.error('Erro ao carregar novidades:', erro);
-            document.getElementById('novidades-grid').innerHTML = 
-                '<div class="sem-produtos">Erro ao carregar novidades. Tente novamente mais tarde.</div>';
+                document.getElementById('destaque-preco').textContent = `R$ ${d.preco}`;
+                document.getElementById('destaque-whatsapp').href = `https://wa.me/5519996576067?text=Olá! Vi a novidade ${d.descricao} no site!`;
+
+                // Configura Grade (restante)
+                novidades.slice(1).forEach(p => {
+                    const img = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
+                    const pJS = { codigo: p.codigo, nome: p.descricao, preco: parseFloat(p.preco.replace(',', '.')), imagem: img };
+                    
+                    grid.innerHTML += `
+                    <div class="novidade-item">
+                        <img src="${img}" onerror="this.src='imagens/placeholder.jpg'">
+                        <h4>${p.descricao}</h4>
+                        <span class="categoria-principal" style="padding: 0 15px; display: block; margin-bottom: 10px;">${p.categoria || 'Cerâmica Autoral'}</span>
+                        <p class="preco" style="padding: 0 15px; font-weight: bold; color: #8b9a6e;">R$ ${p.preco}</p>
+                        <button onclick='window.carrinho.adicionar(${JSON.stringify(pJS)})' class="btn-adicionar" style="width: 90%; margin: 10px 5%;">
+                            Adicionar
+                        </button>
+                    </div>`;
+                });
+            }
         });
 </script>
-
 </body>
 </html>
-
