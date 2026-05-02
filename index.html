@@ -12,6 +12,16 @@
 <header id="cabecalho">
     <h1><i class="fas fa-leaf"></i> Terráli<sup>™</sup></h1>
     <p class="subtitulo-cabecalho">Sua Joia em Cerâmica Autoral</p>
+    <div class="header-info">
+        <div class="header-info-item">
+            <i class="fas fa-truck"></i>
+            <span>Enviamos para todo Brasil</span>
+        </div>
+        <div class="header-info-item">
+            <i class="fas fa-clock"></i>
+            <span>Segunda a Sexta: 9h às 18h</span>
+        </div>
+    </div>
     <nav>
         <a href="index.html" class="active">Início</a>
         <a href="novidades.html">Novidades</a>
@@ -25,7 +35,7 @@
     <section class="vitrine">
         <h2>Nossas Peças</h2>
         <div class="produtos-grid" id="produtos-grid">
-            <!-- JavaScript preencherá aqui -->
+            <!-- Os produtos serão inseridos aqui pelo JavaScript -->
         </div>
     </section>
 </main>
@@ -36,12 +46,20 @@
             <h4>Terráli<sup>™</sup></h4>
             <p>Peças artesanais com a pureza da natureza</p>
         </div>
-        <div class="social-links">
-            <a href="https://www.instagram.com/terrali_ceramicas/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/5519996576067" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <div>
+            <h4>Redes Sociais</h4>
+            <div class="social-links">
+                <a href="https://www.instagram.com/terrali_ceramicas/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5519996576067" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Atendimento</h4>
+            <p>📞 (19) 99657-6067</p>
+            <p>✉️ terrali.atendimento@gmail.com</p>
         </div>
     </div>
-    <p>© 2026 Wilson Lopes Junior. Terráli<sup>™</sup></p>
+    <p style="margin-top: 30px;">2026 Wilson Lopes Junior. Terráli<sup>™</sup></p>
 </footer>
 
 <script src="js/carrinho.js"></script>
@@ -52,37 +70,53 @@
         card.querySelector('.img-principal').src = novaSrc;
     }
 
+    // Efeito de scroll no cabeçalho
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('cabecalho');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Carregamento dos produtos via JSON
     fetch('dados/produtos.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) throw new Error('Erro ao carregar produtos');
+            return response.json();
+        })
         .then(data => {
             const grid = document.getElementById('produtos-grid');
             grid.innerHTML = '';
 
             data.produtos.forEach(p => {
-                const imgPrincipal = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
+                const imagemPrincipal = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
                 
-                // Criar as miniaturas (as 3 imagens vinculadas)
+                // Monta o HTML das miniaturas se houver imagens extras
                 let miniaturasHtml = '';
                 if (p.imagens_extras && p.imagens_extras.length > 0) {
-                    miniaturasHtml = `<div class="miniaturas">
-                        <img src="${imgPrincipal}" onclick="trocarImagem(this, '${imgPrincipal}')" class="thumb">
-                        ${p.imagens_extras.map(img => `
-                            <img src="${img}" onclick="trocarImagem(this, '${img}')" class="thumb">
-                        `).join('')}
-                    </div>`;
+                    miniaturasHtml = `
+                        <div class="miniaturas">
+                            <img src="${imagemPrincipal}" onclick="trocarImagem(this, '${imagemPrincipal}')" class="thumb">
+                            ${p.imagens_extras.map(img => `
+                                <img src="${img}" onclick="trocarImagem(this, '${img}')" class="thumb">
+                            `).join('')}
+                        </div>`;
                 }
 
                 const produtoJS = {
                     codigo: p.codigo,
                     nome: p.descricao,
                     preco: parseFloat(p.preco.replace(',', '.')),
-                    imagem: imgPrincipal
+                    imagem: imagemPrincipal
                 };
 
+                // Injeção do card com a nova linha de Categoria
                 grid.innerHTML += `
                 <div class="produto-card">
                     <div class="moldura-img">
-                        <img src="${imgPrincipal}" class="img-principal" alt="${p.descricao}" onerror="this.src='imagens/placeholder.jpg'">
+                        <img src="${imagemPrincipal}" class="img-principal" alt="${p.descricao}" onerror="this.src='imagens/placeholder.jpg'">
                     </div>
                     
                     ${miniaturasHtml}
@@ -97,7 +131,12 @@
                     </div>
                 </div>`;
             });
+        })
+        .catch(erro => {
+            console.error('Erro:', erro);
+            document.getElementById('produtos-grid').innerHTML = '<p>Erro ao carregar os produtos.</p>';
         });
 </script>
+
 </body>
 </html>
