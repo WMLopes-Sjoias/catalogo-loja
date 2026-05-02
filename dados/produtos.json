@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "02/05/2026 10:53",
-  "total_produtos": 41,
+  "ultima_atualizacao": "02/05/2026 14:42",
+  "total_produtos": 44,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -192,6 +192,15 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000779",
+      "descricao": "COLAR ESFERAS DA FLORESTA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "35,00",
+      "imagem": "imagens/produtos/2000000000779.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000430",
       "descricao": "COLAR ESSÊNCIA DA FLORESTA",
       "colecao": "GERAL",
@@ -237,12 +246,30 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000191",
+      "descricao": "COLAR GOTA DE OUTONO",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000191.jpg",
+      "destaque": "novidade"
+    },
+    {
       "codigo": "2000000000414",
       "descricao": "COLAR HARMONIA VERDE",
       "colecao": "GERAL",
       "categoria": "BIJOUTERIA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000414.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000778",
+      "descricao": "COLAR LAGOA DO CARIBE",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "35,00",
+      "imagem": "imagens/produtos/2000000000778.jpg",
       "destaque": ""
     },
     {
@@ -282,21 +309,21 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000785",
+      "descricao": "COLAR PÉROLAS DA TERRA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "35,00",
+      "imagem": "imagens/produtos/2000000000785.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000740",
       "descricao": "COLAR RESERVA NATURAL",
       "colecao": "GERAL",
       "categoria": "BIJOUTERIA",
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000740.jpg",
-      "destaque": "novidade"
-    },
-    {
-      "codigo": "2000000000191",
-      "descricao": "COLAR RESINA",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000191.jpg",
       "destaque": "novidade"
     },
     {
