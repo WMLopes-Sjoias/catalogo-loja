@@ -35,7 +35,7 @@
     <section class="vitrine">
         <h2>Nossas Peças</h2>
         <div class="produtos-grid" id="produtos-grid">
-            <!-- Os produtos serão inseridos aqui pelo JavaScript -->
+            <!-- Os produtos serão carregados aqui -->
         </div>
     </section>
 </main>
@@ -62,15 +62,19 @@
     <p style="margin-top: 30px;">2026 Wilson Lopes Junior. Terráli<sup>™</sup></p>
 </footer>
 
+<!-- Scripts -->
 <script src="js/carrinho.js"></script>
 <script>
-    // Função para trocar a imagem principal ao clicar na miniatura
+    // Função vital para as miniaturas funcionarem
     function trocarImagem(el, novaSrc) {
         const card = el.closest('.produto-card');
-        card.querySelector('.img-principal').src = novaSrc;
+        const imgPrincipal = card.querySelector('.img-principal');
+        if(imgPrincipal) {
+            imgPrincipal.src = novaSrc;
+        }
     }
 
-    // Efeito de scroll no cabeçalho
+    // Efeito do topo ao rolar a página
     window.addEventListener('scroll', function() {
         const header = document.getElementById('cabecalho');
         if (window.scrollY > 50) {
@@ -80,61 +84,65 @@
         }
     });
 
-    // Carregamento dos produtos via JSON
+    // Busca os produtos no seu arquivo JSON
     fetch('dados/produtos.json')
         .then(response => {
-            if (!response.ok) throw new Error('Erro ao carregar produtos');
+            if (!response.ok) throw new Error('Não foi possível carregar o arquivo de produtos.');
             return response.json();
         })
         .then(data => {
             const grid = document.getElementById('produtos-grid');
+            if (!grid) return;
+            
             grid.innerHTML = '';
 
             data.produtos.forEach(p => {
-                const imagemPrincipal = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
+                const imgPrincipal = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
                 
-                // Monta o HTML das miniaturas se houver imagens extras
+                // Lógica das miniaturas (3 imagens vinculadas)
                 let miniaturasHtml = '';
-                if (p.imagens_extras && p.imagens_extras.length > 0) {
+                if (p.imagens_extras && Array.isArray(p.imagens_extras)) {
                     miniaturasHtml = `
-                        <div class="miniaturas">
-                            <img src="${imagemPrincipal}" onclick="trocarImagem(this, '${imagemPrincipal}')" class="thumb">
+                        <div class="miniaturas" style="display: flex; gap: 5px; margin-top: 10px; justify-content: center;">
+                            <img src="${imgPrincipal}" onclick="trocarImagem(this, '${imgPrincipal}')" class="thumb" style="width: 50px; height: 50px; object-fit: cover; cursor: pointer; border: 1px solid #ddd; border-radius: 5px;">
                             ${p.imagens_extras.map(img => `
-                                <img src="${img}" onclick="trocarImagem(this, '${img}')" class="thumb">
+                                <img src="${img}" onclick="trocarImagem(this, '${img}')" class="thumb" style="width: 50px; height: 50px; object-fit: cover; cursor: pointer; border: 1px solid #ddd; border-radius: 5px;">
                             `).join('')}
                         </div>`;
                 }
 
-                const produtoJS = {
+                // Objeto para o carrinho
+                const produtoParaCarrinho = {
                     codigo: p.codigo,
                     nome: p.descricao,
-                    preco: parseFloat(p.preco.replace(',', '.')),
-                    imagem: imagemPrincipal
+                    preco: parseFloat(p.preco.toString().replace(',', '.')),
+                    imagem: imgPrincipal
                 };
 
-                // Injeção do card com a nova linha de Categoria
+                // Montagem do Card
                 grid.innerHTML += `
-                <div class="produto-card">
-                    <div class="moldura-img">
-                        <img src="${imagemPrincipal}" class="img-principal" alt="${p.descricao}" onerror="this.src='imagens/placeholder.jpg'">
+                <div class="produto-card" style="background: white; border-radius: 15px; padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s;">
+                    <div class="moldura-img" style="overflow: hidden; border-radius: 10px;">
+                        <img src="${imgPrincipal}" class="img-principal" alt="${p.descricao}" style="width: 100%; height: auto; display: block;" onerror="this.src='imagens/placeholder.jpg'">
                     </div>
                     
                     ${miniaturasHtml}
 
-                    <div class="produto-info">
-                        <h4>${p.descricao}</h4>
-                        <span class="categoria-principal">${p.categoria || 'Cerâmica Autoral'}</span>
-                        <p class="preco">R$ ${p.preco}</p>
-                        <button onclick='window.carrinho.adicionar(${JSON.stringify(produtoJS)})' class="btn-adicionar">
+                    <div class="produto-info" style="margin-top: 15px; text-align: center;">
+                        <h4 style="color: #5d7a5c; margin-bottom: 5px;">${p.descricao}</h4>
+                        <span class="categoria-principal" style="display: block; font-size: 0.8em; color: #8b9a6e; text-transform: uppercase; margin-bottom: 10px;">${p.categoria || 'Cerâmica Autoral'}</span>
+                        <p class="preco" style="font-weight: bold; color: #333; font-size: 1.2em;">R$ ${p.preco}</p>
+                        <button onclick='window.carrinho.adicionar(${JSON.stringify(produtoParaCarrinho)})' class="btn-adicionar" style="background: #5d7a5c; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; margin-top: 10px; width: 100%;">
                             <i class="fas fa-cart-plus"></i> Adicionar
                         </button>
                     </div>
                 </div>`;
             });
         })
-        .catch(erro => {
-            console.error('Erro:', erro);
-            document.getElementById('produtos-grid').innerHTML = '<p>Erro ao carregar os produtos.</p>';
+        .catch(error => {
+            console.error('Erro:', error);
+            const grid = document.getElementById('produtos-grid');
+            if(grid) grid.innerHTML = '<p style="text-align:center;">Houve um problema ao carregar as peças. Por favor, atualize a página.</p>';
         });
 </script>
 
