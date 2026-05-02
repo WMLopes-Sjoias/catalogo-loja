@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "02/05/2026 17:34",
+  "ultima_atualizacao": "02/05/2026 17:35",
   "total_produtos": 44,
   "produtos": [
     {
@@ -42,7 +42,7 @@
       "codigo": "2000000000320",
       "descricao": "BRINCOS CERÂMICA",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA",
       "preco": "45,00",
       "imagem": "imagens/produtos/2000000000320.jpg",
       "destaque": ""
