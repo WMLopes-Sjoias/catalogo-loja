@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "02/05/2026 18:36",
+  "ultima_atualizacao": "02/05/2026 19:12",
   "total_produtos": 44,
   "produtos": [
     {
@@ -85,9 +85,9 @@
     },
     {
       "codigo": "2000000000758",
-      "descricao": "COLAR ARO PINGENTE - CERÂMICA PLÁTICA",
+      "descricao": "COLAR ARO PINGENTE",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000758.jpg",
       "destaque": ""
@@ -177,7 +177,7 @@
       "codigo": "2000000000773",
       "descricao": "COLAR DOIS DISCOS",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000773.jpg",
       "destaque": ""
@@ -186,7 +186,7 @@
       "codigo": "2000000000759",
       "descricao": "COLAR DOIS DISCOS",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000759.jpg",
       "destaque": ""
@@ -222,7 +222,7 @@
       "codigo": "2000000000069",
       "descricao": "COLAR ESTRELA GUIA",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "120,00",
       "imagem": "imagens/produtos/2000000000069.jpg",
       "destaque": "novidade"
@@ -231,7 +231,7 @@
       "codigo": "2000000000429",
       "descricao": "COLAR FOGO E TERRA",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000429.jpg",
       "destaque": ""
@@ -240,7 +240,7 @@
       "codigo": "2000000000742",
       "descricao": "COLAR GOTA DE ORVALHO",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000742.jpg",
       "destaque": ""
@@ -258,7 +258,7 @@
       "codigo": "2000000000414",
       "descricao": "COLAR HARMONIA VERDE",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000414.jpg",
       "destaque": ""
@@ -303,7 +303,7 @@
       "codigo": "2000000000776",
       "descricao": "COLAR PROTEÇÃO E TERRA",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "80,00",
       "imagem": "imagens/produtos/2000000000776.jpg",
       "destaque": ""
@@ -330,7 +330,7 @@
       "codigo": "2000000000574",
       "descricao": "COLAR SOL E TERRA",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000574.jpg",
       "destaque": ""
@@ -339,7 +339,7 @@
       "codigo": "2000000000242",
       "descricao": "COLAR SUTILIZA VERDE",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
+      "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000242.jpg",
       "destaque": ""
