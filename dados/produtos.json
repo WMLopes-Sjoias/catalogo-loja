@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "01/05/2026 12:09",
-  "total_produtos": 37,
+  "ultima_atualizacao": "02/05/2026 10:53",
+  "total_produtos": 41,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -210,6 +210,15 @@
       "destaque": "novidade"
     },
     {
+      "codigo": "2000000000069",
+      "descricao": "COLAR ESTRELA GUIA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "120,00",
+      "imagem": "imagens/produtos/2000000000069.jpg",
+      "destaque": "novidade"
+    },
+    {
       "codigo": "2000000000429",
       "descricao": "COLAR FOGO E TERRA",
       "colecao": "GERAL",
@@ -237,6 +246,24 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000044",
+      "descricao": "COLAR MUSGO IMPERIAL",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000044.jpg",
+      "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000589",
+      "descricao": "COLAR NÓ INFINITO",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000589.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000510",
       "descricao": "COLAR OCEANO E AREIA",
       "colecao": "GERAL",
@@ -246,12 +273,21 @@
       "destaque": "novidade"
     },
     {
-      "codigo": "2000000000044",
-      "descricao": "COLAR RESINA",
+      "codigo": "2000000000776",
+      "descricao": "COLAR PROTEÇÃO E TERRA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "80,00",
+      "imagem": "imagens/produtos/2000000000776.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000740",
+      "descricao": "COLAR RESERVA NATURAL",
       "colecao": "GERAL",
       "categoria": "BIJOUTERIA",
       "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000044.jpg",
+      "imagem": "imagens/produtos/2000000000740.jpg",
       "destaque": "novidade"
     },
     {
