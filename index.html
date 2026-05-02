@@ -3,9 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terráli - Cerâmica Autoral</title>
+    <title>Terráli<sup>™</sup></title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .pagina-inicial {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .pagina-inicial h2 {
+            color: #5d7a5c;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .produto-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .produto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .produto-info {
+            padding: 15px;
+        }
+
+        .produto-info h4 {
+            color: #5d7a5c;
+            margin-bottom: 5px;
+            font-size: 1em;
+            min-height: 40px;
+        }
+
+        .produto-info .preco {
+            font-size: 1.3em;
+            color: #8b9a6e;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #ff6b6b;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .btn-carrinho {
+            background: #5d7a5c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .btn-carrinho:hover {
+            background: #4a6249;
+        }
+
+        .btn-carrinho i {
+            margin-right: 5px;
+        }
+
+        .sem-produtos {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .produtos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -27,15 +140,19 @@
         <a href="novidades.html">Novidades</a>
         <a href="sobre.html">Sobre Nós</a>
         <a href="contato.html">Contato</a>
-        <a href="carrinho.html">🛒 <span id="carrinho-contador">0</span></a>
+        <a href="carrinho.html">
+            🛒 <span id="carrinho-contador">0</span>
+        </a>
     </nav>
 </header>
 
 <main>
-    <section class="vitrine">
-        <h2>Nossas Peças</h2>
+    <section class="pagina-inicial">
+        <h2>✨ Todos os Produtos</h2>
+        <p class="subtitulo">Confira nossa seleção especial para você!</p>
+
         <div class="produtos-grid" id="produtos-grid">
-            <!-- Os produtos serão carregados aqui -->
+            <!-- Carregado via JavaScript -->
         </div>
     </section>
 </main>
@@ -57,24 +174,14 @@
             <h4>Atendimento</h4>
             <p>📞 (19) 99657-6067</p>
             <p>✉️ terrali.atendimento@gmail.com</p>
+            <p>🕒 Seg-Sex: 9h às 18h</p>
         </div>
     </div>
-    <p style="margin-top: 30px;">2026 Wilson Lopes Junior. Terráli<sup>™</sup></p>
+    <p style="margin-top: 30px;">2026 Wilson Lopes Junior. Terráli<sup>™</sup>.</p>
 </footer>
 
-<!-- Scripts -->
 <script src="js/carrinho.js"></script>
 <script>
-    // Função vital para as miniaturas funcionarem
-    function trocarImagem(el, novaSrc) {
-        const card = el.closest('.produto-card');
-        const imgPrincipal = card.querySelector('.img-principal');
-        if(imgPrincipal) {
-            imgPrincipal.src = novaSrc;
-        }
-    }
-
-    // Efeito do topo ao rolar a página
     window.addEventListener('scroll', function() {
         const header = document.getElementById('cabecalho');
         if (window.scrollY > 50) {
@@ -84,66 +191,74 @@
         }
     });
 
-    // Busca os produtos no seu arquivo JSON
     fetch('dados/produtos.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Não foi possível carregar o arquivo de produtos.');
-            return response.json();
-        })
-        .then(data => {
-            const grid = document.getElementById('produtos-grid');
-            if (!grid) return;
+    .then(response => {
+        if (!response.ok) throw new Error('Erro ao carregar produtos');
+        return response.json();
+    })
+    .then(data => {
+        const produtos = data.produtos || [];
+        const grid = document.getElementById('produtos-grid');
+        
+        if (produtos.length === 0) {
+            grid.innerHTML = '<div class="sem-produtos">Nenhum produto cadastrado ainda.</div>';
+            return;
+        }
+
+        grid.innerHTML = '';
+
+        produtos.forEach(p => {
+            let badge = '';
+            if (p.destaque === 'novidade') {
+                badge = '<span class="badge">🆕 Novidade</span>';
+            }
+
+            const imagem = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
             
-            grid.innerHTML = '';
+            let miniaturas = '';
+            for (let i = 1; i <= 3; i++) {
+                miniaturas += `<img src="imagens/produtos/${p.codigo}-${i}.jpg" class="miniatura" style="display:none;" onload="this.style.display='inline-block'">`;
+            }
 
-            data.produtos.forEach(p => {
-                const imgPrincipal = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
-                
-                // Lógica das miniaturas (3 imagens vinculadas)
-                let miniaturasHtml = '';
-                if (p.imagens_extras && Array.isArray(p.imagens_extras)) {
-                    miniaturasHtml = `
-                        <div class="miniaturas" style="display: flex; gap: 5px; margin-top: 10px; justify-content: center;">
-                            <img src="${imgPrincipal}" onclick="trocarImagem(this, '${imgPrincipal}')" class="thumb" style="width: 50px; height: 50px; object-fit: cover; cursor: pointer; border: 1px solid #ddd; border-radius: 5px;">
-                            ${p.imagens_extras.map(img => `
-                                <img src="${img}" onclick="trocarImagem(this, '${img}')" class="thumb" style="width: 50px; height: 50px; object-fit: cover; cursor: pointer; border: 1px solid #ddd; border-radius: 5px;">
-                            `).join('')}
-                        </div>`;
-                }
+            const produto = {
+                codigo: p.codigo,
+                nome: p.descricao,
+                preco: parseFloat(p.preco.replace(',', '.')),
+                imagem: imagem
+            };
 
-                // Objeto para o carrinho
-                const produtoParaCarrinho = {
-                    codigo: p.codigo,
-                    nome: p.descricao,
-                    preco: parseFloat(p.preco.toString().replace(',', '.')),
-                    imagem: imgPrincipal
-                };
-
-                // Montagem do Card
-                grid.innerHTML += `
-                <div class="produto-card" style="background: white; border-radius: 15px; padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s;">
-                    <div class="moldura-img" style="overflow: hidden; border-radius: 10px;">
-                        <img src="${imgPrincipal}" class="img-principal" alt="${p.descricao}" style="width: 100%; height: auto; display: block;" onerror="this.src='imagens/placeholder.jpg'">
+            const card = `
+            <div class="produto-card">
+                ${badge}
+                <div class="imagens-produto">
+                    <img src="${imagem}" class="imagem-principal" alt="${p.descricao}" onerror="this.src='imagens/placeholder.jpg'">
+                    <div class="miniaturas">
+                        ${miniaturas}
                     </div>
+                </div>
+                <div class="produto-info">
+                    <h4>${p.descricao}</h4>
                     
-                    ${miniaturasHtml}
+                    <!-- LINHA DA CATEGORIA ADICIONADA AQUI -->
+                    <span class="categoria-principal" style="display: block; margin-top: -5px; margin-bottom: 5px;">
+                        ${p.categoria || 'Cerâmica Autoral'}
+                    </span>
 
-                    <div class="produto-info" style="margin-top: 15px; text-align: center;">
-                        <h4 style="color: #5d7a5c; margin-bottom: 5px;">${p.descricao}</h4>
-                        <span class="categoria-principal" style="display: block; font-size: 0.8em; color: #8b9a6e; text-transform: uppercase; margin-bottom: 10px;">${p.categoria || 'Cerâmica Autoral'}</span>
-                        <p class="preco" style="font-weight: bold; color: #333; font-size: 1.2em;">R$ ${p.preco}</p>
-                        <button onclick='window.carrinho.adicionar(${JSON.stringify(produtoParaCarrinho)})' class="btn-adicionar" style="background: #5d7a5c; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; margin-top: 10px; width: 100%;">
-                            <i class="fas fa-cart-plus"></i> Adicionar
-                        </button>
-                    </div>
-                </div>`;
-            });
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-            const grid = document.getElementById('produtos-grid');
-            if(grid) grid.innerHTML = '<p style="text-align:center;">Houve um problema ao carregar as peças. Por favor, atualize a página.</p>';
+                    <div class="preco">R$ ${p.preco}</div>
+                    <button onclick='window.carrinho.adicionar(${JSON.stringify(produto)})' class="btn-carrinho">
+                        <i class="fas fa-cart-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+            `;
+            grid.innerHTML += card;
         });
+    })
+    .catch(erro => {
+        console.error('Erro ao carregar produtos:', erro);
+        document.getElementById('produtos-grid').innerHTML = 
+            '<div class="sem-produtos">Erro ao carregar produtos. Tente novamente mais tarde.</div>';
+    });
 </script>
 
 </body>
