@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "03/05/2026 17:54",
+  "ultima_atualizacao": "03/05/2026 17:57",
   "total_produtos": 45,
   "produtos": [
     {
@@ -82,6 +82,15 @@
       "preco": "73,00",
       "imagem": "imagens/produtos/2000000000756.jpg",
       "destaque": ""
+    },
+    {
+      "codigo": "2000000000738",
+      "descricao": "BRINCOS PÊNDULO URBANO",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "50,00",
+      "imagem": "imagens/produtos/2000000000738.jpg",
+      "destaque": "novidade"
     },
     {
       "codigo": "2000000000758",
@@ -316,15 +325,6 @@
       "preco": "35,00",
       "imagem": "imagens/produtos/2000000000785.jpg",
       "destaque": ""
-    },
-    {
-      "codigo": "2000000000738",
-      "descricao": "COLAR PÊNDULO URBANO",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA PLÁSTICA",
-      "preco": "50,00",
-      "imagem": "imagens/produtos/2000000000738.jpg",
-      "destaque": "novidade"
     },
     {
       "codigo": "2000000000740",
