@@ -81,7 +81,7 @@
         const descricao = "Pedido Terráli - " + new Date().toLocaleString();
         
         // URL DO SEU GOOGLE SCRIPT (COLOQUE A URL QUE VOCÊ OBTEVE NO DEPLOY)
-        const scriptURL = "https://script.google.com/macros/s/AKfycbxtkPkSG9ejuM7kKHUsEGLsgVROkMNx114mvb0F-JetGpmfGRtNs7GPZXweNszLokJi/exec?total=10.00";
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxtkPkSG9ejuM7kKHUsEGLsgVROkMNx114mvb0F-JetGpmfGRtNs7GPZXweNszLokJi/exec";
         const urlFinal = `${scriptURL}?total=${total.toFixed(2)}&descricao=${encodeURIComponent(descricao)}`;
 
         const btn = document.querySelector('.btn-pagseguro');
