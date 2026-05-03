@@ -296,114 +296,40 @@
 
     // 🔥 FUNÇÃO PARA FINALIZAR PEDIDO (API ORDER)
     function finalizarPagamento() {
-        const total = window.carrinho.total;
-        if (total <= 0) {
-            alert("Carrinho vazio!");
-            return;
-        }
+    const total = window.carrinho.total;
+    if (total <= 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
 
-        const descricao = "Pedido Terráli - " + new Date().toLocaleString();
-        
-        // 🔥 SUBSTITUA SUA_URL_AQUI PELA URL DO SEU SCRIPT
-        const url = "https://script.google.com/macros/s/AKfycbw8ZGveNqNujMVx3G_DqmWHHJqNJUamRrQx9m2b39BjWMoDNKq4zmklOgK__6taNIY/exec" + total.toFixed(2) + "&descricao=" + encodeURIComponent(descricao);
+    const descricao = "Pedido Terráli - " + new Date().toLocaleString();
+    
+    // URL CORRIGIDA: Adicionado o '?' e o parâmetro 'total='
+    const urlBase = "https://script.google.com/macros/s/AKfycbw8ZGveNqNujMVx3G_DqmWHHJqNJUamRrQx9m2b39BjWMoDNKq4zmklOgK__6taNIY/exec";
+    const urlFinal = `${urlBase}?total=${total.toFixed(2)}&descricao=${encodeURIComponent(descricao)}`;
 
-        // Mostra mensagem de carregamento
-        const btn = document.querySelector('.btn-pagseguro');
-        const textoOriginal = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando pagamento...';
-        btn.disabled = true;
+    // Feedback visual no botão
+    const btn = document.querySelector('.btn-pagseguro');
+    const textoOriginal = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparando checkout...';
+    btn.disabled = true;
 
-        fetch(url)
-            .then(response => response.text())
-            .then(link => {
-                if (link.includes("https://sandbox.pagseguro.uol.com.br") || link.includes("https://pagseguro.uol.com.br")) {
-                    window.location.href = link;
-                } else {
-                    alert("Erro ao gerar pagamento: " + link);
-                    btn.innerHTML = textoOriginal;
-                    btn.disabled = false;
-                }
-            })
-            .catch(err => {
-                alert("Erro na integração: " + err.message);
+    // Chamada para o Google Script
+    fetch(urlFinal)
+        .then(response => response.text())
+        .then(link => {
+            if (link.startsWith("http")) {
+                window.location.href = link; // Redireciona para o PagBank
+            } else {
+                alert("Atenção: " + link);
                 btn.innerHTML = textoOriginal;
                 btn.disabled = false;
-            });
-    }
-
-    function carregarCarrinho() {
-        const conteudo = document.getElementById('carrinho-conteudo');
-        const itens = window.carrinho.itens;
-        
-        if (itens.length === 0) {
-            conteudo.innerHTML = `
-                <div class="carrinho-vazio">
-                    <i class="fas fa-shopping-cart"></i>
-                    <h3>Seu carrinho está vazio</h3>
-                    <p>Adicione produtos para começar suas compras!</p>
-                    <a href="index.html" class="btn-continuar" style="display: inline-block; padding: 10px 30px; margin-top: 20px;">
-                        Continuar Comprando
-                    </a>
-                </div>
-            `;
-            return;
-        }
-
-        let html = '';
-        itens.forEach(item => {
-            html += `
-                <div class="carrinho-item">
-                    <img src="${item.imagem || 'imagens/placeholder.jpg'}" alt="${item.nome}">
-                    <div class="item-info">
-                        <h4>${item.nome}</h4>
-                        <div class="preco">R$ ${item.preco}</div>
-                        <div class="codigo-produto">Código: ${item.codigo}</div>
-                    </div>
-                    <div class="item-acoes">
-                        <div class="quantidade">
-                            <button onclick="window.carrinho.atualizarQuantidade('${item.codigo}', ${item.quantidade - 1})">-</button>
-                            <span>${item.quantidade}</span>
-                            <button onclick="window.carrinho.atualizarQuantidade('${item.codigo}', ${item.quantidade + 1})">+</button>
-                        </div>
-                        <button onclick="window.carrinho.remover('${item.codigo}')" class="btn-remover">
-                            <i class="fas fa-trash"></i> Remover
-                        </button>
-                    </div>
-                </div>
-            `;
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Erro de rede: Certifique-se que o Script está publicado como 'Qualquer pessoa'.");
+            btn.innerHTML = textoOriginal;
+            btn.disabled = false;
         });
-
-        html += `
-            <div class="carrinho-resumo">
-                <div class="resumo-linha">
-                    <span>Subtotal:</span>
-                    <span>R$ ${window.carrinho.total.toFixed(2)}</span>
-                </div>
-                <div class="resumo-linha total">
-                    <span>Total:</span>
-                    <span>R$ ${window.carrinho.total.toFixed(2)}</span>
-                </div>
-                <div class="botoes-pagamento">
-                    <button onclick="finalizarPagamento()" class="btn-pagseguro">
-                        <i class="fas fa-credit-card"></i> Pagar com Cartão/Pix
-                    </button>
-                    <a href="https://wa.me/5519996576067?text=${window.carrinho.gerarMensagemWhatsApp()}" 
-                       target="_blank" class="btn-whatsapp-finalizar">
-                        <i class="fab fa-whatsapp"></i> Falar com atendente
-                    </a>
-                </div>
-                <a href="index.html" class="btn-continuar">
-                    Continuar Comprando
-                </a>
-            </div>
-        `;
-
-        conteudo.innerHTML = html;
-    }
-
-    window.carregarCarrinho = carregarCarrinho;
-    carregarCarrinho();
-</script>
-
-</body>
-</html>
+}
