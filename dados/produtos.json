@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "02/05/2026 19:12",
-  "total_produtos": 44,
+  "ultima_atualizacao": "03/05/2026 17:54",
+  "total_produtos": 45,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -316,6 +316,15 @@
       "preco": "35,00",
       "imagem": "imagens/produtos/2000000000785.jpg",
       "destaque": ""
+    },
+    {
+      "codigo": "2000000000738",
+      "descricao": "COLAR PÊNDULO URBANO",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "50,00",
+      "imagem": "imagens/produtos/2000000000738.jpg",
+      "destaque": "novidade"
     },
     {
       "codigo": "2000000000740",
