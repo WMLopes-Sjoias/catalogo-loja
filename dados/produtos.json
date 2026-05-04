@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "04/05/2026 10:42",
-  "total_produtos": 51,
+  "ultima_atualizacao": "04/05/2026 12:29",
+  "total_produtos": 56,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -192,6 +192,15 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000786",
+      "descricao": "COLAR DE GOTAS BRANCAS",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "80,00",
+      "imagem": "imagens/produtos/2000000000786.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000773",
       "descricao": "COLAR DOIS DISCOS",
       "colecao": "GERAL",
@@ -336,6 +345,24 @@
       "destaque": "novidade"
     },
     {
+      "codigo": "2000000000043",
+      "descricao": "COLAR OCRE E MARFIM",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "80,00",
+      "imagem": "imagens/produtos/2000000000043.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000665",
+      "descricao": "COLAR PINGO DE MEL",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "80,00",
+      "imagem": "imagens/produtos/2000000000665.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000776",
       "descricao": "COLAR PROTEÇÃO E TERRA",
       "colecao": "GERAL",
@@ -453,6 +480,15 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000784",
+      "descricao": "GARGANTILHA AURA CERÂMICA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "190,00",
+      "imagem": "imagens/produtos/2000000000784.jpg",
+      "destaque": "novidade"
+    },
+    {
       "codigo": "2000000000783",
       "descricao": "GARGANTILHA CERÂMICA",
       "colecao": "GERAL",
@@ -460,6 +496,15 @@
       "preco": "90,00",
       "imagem": "imagens/produtos/2000000000783.jpg",
       "destaque": ""
+    },
+    {
+      "codigo": "2000000000754",
+      "descricao": "GARGANTILHA EQUILÍBRIO",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "180,00",
+      "imagem": "imagens/produtos/2000000000754.jpg",
+      "destaque": "novidade"
     }
   ]
 }
