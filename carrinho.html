@@ -1,136 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - WMLopes</title>
+window.carrinho = {
+    itens: JSON.parse(localStorage.getItem('terrali_carrinho')) || [],
+    total: 0,
 
-    <style>
-        body { font-family: Arial; }
+    renderizar: function() {
+        // Esta função é preenchida automaticamente pelo script da página HTML
+    },
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
+    salvar() {
+        localStorage.setItem('terrali_carrinho', JSON.stringify(this.itens));
+        this.calcularTotal();
+        if (typeof this.renderizar === 'function') {
+            this.renderizar();
         }
+    },
 
-        .item {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-        }
-
-        .btn {
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .btn-pagar { background: #28a745; color: white; }
-        .btn-limpar { background: #dc3545; color: white; }
-    </style>
-</head>
-
-<body>
-
-<div class="container">
-    <h2>Seu Carrinho</h2>
-
-    <div id="lista"></div>
-
-    <h3 id="total">Total: R$ 0,00</h3>
-
-    <button class="btn btn-limpar" onclick="limparCarrinho()">Esvaziar Carrinho</button>
-    <button class="btn btn-pagar" onclick="finalizarCompra()">Finalizar Compra</button>
-</div>
-
-<script>
-let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-function renderizar() {
-    const lista = document.getElementById("lista");
-    let total = 0;
-
-    lista.innerHTML = "";
-
-    if (carrinho.length === 0) {
-        lista.innerHTML = "<p>Carrinho vazio</p>";
-        document.getElementById("total").innerText = "Total: R$ 0,00";
-        return;
-    }
-
-    carrinho.forEach((item) => {
-        const div = document.createElement("div");
-        div.className = "item";
-
-        div.innerHTML = `
-            <span>${item.nome} x${item.quantidade}</span>
-            <span>R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
-        `;
-
-        lista.appendChild(div);
-        total += item.preco * item.quantidade;
-    });
-
-    document.getElementById("total").innerText = "Total: R$ " + total.toFixed(2);
-}
-
-// 🔴 LIMPAR CARRINHO + REDIRECIONAR
-function limparCarrinho() {
-    if (confirm("Deseja esvaziar o carrinho?")) {
-        localStorage.removeItem("carrinho");
-        carrinho = [];
-        window.location.href = "index.html";
-    }
-}
-
-// 🟢 PAGAMENTO VIA GOOGLE SCRIPT (FUNCIONANDO)
-async function finalizarCompra() {
-
-    if (carrinho.length === 0) {
-        alert("Carrinho vazio!");
-        return;
-    }
-
-    const total = carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
-    const descricao = "Pedido WMLopes - " + new Date().toLocaleString();
-
-    const url = "https://script.google.com/macros/s/AKfycbx0aZT8USBIY0chg4qkGyzsAQ8bcfXGqJ9yWQHJEPd_76aj98o2EFWafpJ1cTjLan1i/exec"
-        + "?total=" + total.toFixed(2)
-        + "&descricao=" + encodeURIComponent(descricao);
-
-    const btn = document.querySelector('.btn-pagar');
-    const textoOriginal = btn.innerHTML;
-
-    btn.innerHTML = "Gerando pagamento...";
-    btn.disabled = true;
-
-    try {
-        const response = await fetch(url);
-        const link = await response.text();
-
-        console.log("Resposta do Google Script:", link);
-
-        if (link.includes("pagseguro")) {
-            window.location.href = link;
+    adicionar(produto) {
+        const itemExistente = this.itens.find(i => i.codigo === produto.codigo);
+        if (itemExistente) {
+            itemExistente.quantidade += 1;
         } else {
-            alert("Erro ao gerar pagamento: " + link);
-            btn.innerHTML = textoOriginal;
-            btn.disabled = false;
+            this.itens.push({ ...produto, quantidade: 1 });
         }
+        this.salvar();
+        alert('Item adicionado à sua sacola Terráli! 🌿');
+    },
 
-    } catch (erro) {
-        console.error(erro);
-        alert("Erro na integração: " + erro.message);
-        btn.innerHTML = textoOriginal;
-        btn.disabled = false;
+    remover(codigo) {
+        this.itens = this.itens.filter(i => i.codigo !== codigo);
+        this.salvar();
+    },
+
+    atualizarQuantidade(codigo, novaQuantidade) {
+        if (novaQuantidade <= 0) {
+            this.remover(codigo);
+            return;
+        }
+        const item = this.itens.find(i => i.codigo === codigo);
+        if (item) {
+            item.quantidade = novaQuantidade;
+            this.salvar();
+        }
+    },
+
+    calcularTotal() {
+        this.total = this.itens.reduce((acc, item) => {
+            const precoLimpo = typeof item.preco === 'string' 
+                ? parseFloat(item.preco.replace(',', '.')) 
+                : item.preco;
+            return acc + (precoLimpo * item.quantidade);
+        }, 0);
+    },
+
+    gerarMensagemWhatsApp() {
+        if (this.itens.length === 0) return "Olá! Meu carrinho está vazio.";
+
+        let mensagem = "🌿 *Novo Pedido - Terráli*\n\n";
+        mensagem += "Olá! Gostaria de encomendar estes itens:\n";
+        mensagem += "──────────────────\n\n";
+
+        this.itens.forEach(item => {
+            mensagem += `🔸 *${item.nome}*\n`;
+            mensagem += `   Qtd: ${item.quantidade} x R$ ${item.preco}\n`;
+            mensagem += `   Cód: ${item.codigo}\n\n`;
+        });
+
+        mensagem += "──────────────────\n";
+        mensagem += `💰 *Total: R$ ${this.total.toFixed(2).replace('.', ',')}*`;
+        
+        return mensagem;
     }
-}
+};
 
-renderizar();
-</script>
-
-</body>
-</html>
+window.carrinho.calcularTotal();
