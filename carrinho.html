@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - WMLopes</title>
+    <title>Terráli<sup>™</sup></title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -143,35 +143,8 @@
             margin-top: 10px;
         }
 
-        .botoes-pagamento {
-            display: flex;
-            gap: 15px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-
-        .btn-pagseguro {
-            flex: 1;
-            background: #00a650;
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 30px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: background 0.3s;
-            cursor: pointer;
-            border: none;
-            font-family: inherit;
-        }
-
-        .btn-pagseguro:hover {
-            background: #008c44;
-        }
-
-        .btn-whatsapp-finalizar {
-            flex: 1;
+        .btn-finalizar {
+            display: block;
             background: #25D366;
             color: white;
             text-decoration: none;
@@ -180,11 +153,11 @@
             text-align: center;
             font-weight: bold;
             font-size: 1.2em;
+            margin: 20px 0;
             transition: background 0.3s;
-            display: inline-block;
         }
 
-        .btn-whatsapp-finalizar:hover {
+        .btn-finalizar:hover {
             background: #128C7E;
         }
 
@@ -216,17 +189,13 @@
             .quantidade {
                 justify-content: center;
             }
-
-            .botoes-pagamento {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
 <body>
 
 <header id="cabecalho">
-    <h1><i class="fas fa-leaf"></i> WMLopes</h1>
+    <h1>✨ WMLopes Acessórios e Semijoias</h1>
     <div class="header-info">
         <div class="header-info-item">
             <i class="fas fa-truck"></i>
@@ -240,6 +209,8 @@
     <nav>
         <a href="index.html">Início</a>
         <a href="novidades.html">Novidades</a>
+        <a href="mais-vendidos.html">Mais Vendidos</a>
+        <a href="colecoes.html">Coleções</a>
         <a href="sobre.html">Sobre Nós</a>
         <a href="contato.html">Contato</a>
         <a href="carrinho.html" class="active">
@@ -261,25 +232,25 @@
 <footer>
     <div class="footer-content">
         <div>
-            <h4>WMLopes</h4>
+            <h4>Terráli<sup>™</sup></h4>
             <p>Peças artesanais com a pureza da natureza</p>
         </div>
         <div>
             <h4>Redes Sociais</h4>
             <div class="social-links">
-                <a href="https://www.instagram.com/wm__lopes/" target="_blank"><i class="fab fa-instagram"></i></a> -->
-                <!-- a href="https://www.facebook.com/wilsonlopespratas" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/wm__lopes/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <!-- a href="https://www.facebook.com/wilsonlopespratas" target="_blank"><i class="fab fa-facebook"></i></a> -->
                 <a href="https://wa.me/5519996576067" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
         <div>
             <h4>Atendimento</h4>
             <p>📞 (19) 99657-6067</p>
-            <p>✉️ wilsonlopesjr@hotmail.com</p>
+            <p>✉️ terrali.atendimento@gmail.com</p>
             <p>🕒 Seg-Sex: 9h às 18h</p>
         </div>
     </div>
-    <p style="margin-top: 30px;">© 2026 Wilson Lopes Junior. Todos os direitos reservados.</p>
+    <p style="margin-top: 30px;">© 2026 WMLopes Acessórios e Semijoias. Todos os direitos reservados.</p>
 </footer>
 
 <script src="js/carrinho.js"></script>
@@ -292,43 +263,6 @@
             header.classList.remove('scrolled');
         }
     });
-
-    // 🔥 FUNÇÃO PARA FINALIZAR PEDIDO (API ORDER)
-    function finalizarPagamento() {
-        const total = window.carrinho.total;
-        if (total <= 0) {
-            alert("Carrinho vazio!");
-            return;
-        }
-
-        const descricao = "Pedido WMLopes - " + new Date().toLocaleString();
-        
-        // 🔥 SUBSTITUA SUA_URL_AQUI PELA URL DO SEU SCRIPT
-        const url = "https://script.google.com/macros/s/AKfycbw8ZGveNqNujMVx3G_DqmWHHJqNJUamRrQx9m2b39BjWMoDNKq4zmklOgK__6taNIY/exec" + total.toFixed(2) + "&descricao=" + encodeURIComponent(descricao);
-
-        // Mostra mensagem de carregamento
-        const btn = document.querySelector('.btn-pagseguro');
-        const textoOriginal = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando pagamento...';
-        btn.disabled = true;
-
-        fetch(url)
-            .then(response => response.text())
-            .then(link => {
-                if (link.includes("https://sandbox.pagseguro.uol.com.br") || link.includes("https://pagseguro.uol.com.br")) {
-                    window.location.href = link;
-                } else {
-                    alert("Erro ao gerar pagamento: " + link);
-                    btn.innerHTML = textoOriginal;
-                    btn.disabled = false;
-                }
-            })
-            .catch(err => {
-                alert("Erro na integração: " + err.message);
-                btn.innerHTML = textoOriginal;
-                btn.disabled = false;
-            });
-    }
 
     function carregarCarrinho() {
         const conteudo = document.getElementById('carrinho-conteudo');
@@ -382,15 +316,10 @@
                     <span>Total:</span>
                     <span>R$ ${window.carrinho.total.toFixed(2)}</span>
                 </div>
-                <div class="botoes-pagamento">
-                    <button onclick="finalizarPagamento()" class="btn-pagseguro">
-                        <i class="fas fa-credit-card"></i> Pagar com Cartão/Pix
-                    </button>
-                    <a href="https://wa.me/5519996576067?text=${window.carrinho.gerarMensagemWhatsApp()}" 
-                       target="_blank" class="btn-whatsapp-finalizar">
-                        <i class="fab fa-whatsapp"></i> Falar com atendente
-                    </a>
-                </div>
+                <a href="https://wa.me/5519996576067?text=${window.carrinho.gerarMensagemWhatsApp()}" 
+                   target="_blank" class="btn-finalizar">
+                    <i class="fab fa-whatsapp"></i> Finalizar Pedido
+                </a>
                 <a href="index.html" class="btn-continuar">
                     Continuar Comprando
                 </a>
