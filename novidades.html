@@ -3,28 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terráli<sup>™</sup></title>
+    <title>Novidades - Terráli</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Estilos específicos desta página */
-        .pagina-novidades { max-width: 1200px; margin: 40px auto; padding: 20px; }
-        .pagina-novidades h2 { color: #5d7a5c; text-align: center; font-size: 2.5em; }
-        .destaque-card { 
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; 
-            background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(93, 122, 92, 0.2); margin: 40px 0;
-        }
-        .destaque-card img { width: 100%; height: 400px; object-fit: cover; }
-        .destaque-info { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-        .novidades-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .novidade-item { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-        .novidade-item:hover { transform: translateY(-5px); }
-        .novidade-item img { width: 100%; height: 250px; object-fit: cover; }
-        .novidade-item h4 { padding: 15px 15px 5px; color: #5d7a5c; }
-        .btn-whatsapp-destaque { background: #25D366; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; width: fit-content; }
-        @media (max-width: 768px) { .destaque-card, .novidades-grid { grid-template-columns: 1fr; } }
-    </style>
 </head>
 <body>
 
@@ -40,65 +21,55 @@
     </nav>
 </header>
 
-<main class="pagina-novidades">
-    <h2>✨ Novidades da Semana</h2>
-    
-    <div id="destaque-semana-container" style="display: none;">
-        <h3>🌟 Destaque</h3>
-        <div class="destaque-card">
-            <img id="destaque-img" src="" alt="">
-            <div class="destaque-info">
-                <div id="destaque-cabecalho"></div>
-                <p class="preco" id="destaque-preco" style="font-size: 2em; color: #8b9a6e; margin: 15px 0; font-weight: bold;"></p>
-                <a id="destaque-whatsapp" href="#" target="_blank" class="btn-whatsapp-destaque">
-                    <i class="fab fa-whatsapp"></i> Garantir o meu
-                </a>
+<main>
+    <section class="vitrine">
+        <h2>🌿 Lançamentos e Novidades</h2>
+        <div class="produtos-grid">
+            <!-- Exemplo de Produto - Repita este bloco para novos itens -->
+            <div class="produto-card">
+                <img src="imagens/novidade1.jpg" alt="Novo Colar Terráli">
+                <div class="produto-info">
+                    <h3>Colar Aurora</h3>
+                    <p>Cerâmica artesanal com acabamento acetinado.</p>
+                    <span class="preco">R$ 149,90</span>
+                    <button onclick="window.carrinho.adicionar({codigo: 'NOV01', nome: 'Colar Aurora', preco: '149,90', imagem: 'imagens/novidade1.jpg'})">
+                        <i class="fas fa-shopping-basket"></i> Adicionar
+                    </button>
+                </div>
             </div>
+            <!-- Fim do Bloco de Produto -->
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h4>Terráli<sup>™</sup></h4>
+            <p>Peças artesanais com a pureza da natureza</p>
+        </div>
+        <div>
+            <h4>Atendimento</h4>
+            <p>📞 (19) 99657-6067</p>
+            <p>🕒 Seg-Sex: 9h às 18h</p>
         </div>
     </div>
-    
-    <h3>🆕 Recém Chegadas</h3>
-    <div class="novidades-grid" id="novidades-grid"></div>
-</main>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Wilson Lopes Junior. Todos os direitos reservados. Terráli<sup>™</sup>.</p>
+    </div>
+</footer>
 
 <script src="js/carrinho.js"></script>
 <script>
-    fetch('dados/produtos.json')
-        .then(response => response.json())
-        .then(data => {
-            const novidades = data.produtos.filter(p => p.destaque === 'novidade');
-            const grid = document.getElementById('novidades-grid');
-            
-            if (novidades.length > 0) {
-                // Configura Destaque
-                const d = novidades[0];
-                document.getElementById('destaque-semana-container').style.display = 'block';
-                document.getElementById('destaque-img').src = d.imagem || `imagens/produtos/${d.codigo}.jpg`;
-                document.getElementById('destaque-cabecalho').innerHTML = `
-                    <h4 style="font-size: 1.8em; color: #5d7a5c; margin-bottom: 5px;">${d.descricao}</h4>
-                    <span class="categoria-principal" style="display: block; margin-bottom: 10px;">${d.categoria || 'Cerâmica Autoral'}</span>
-                `;
-                document.getElementById('destaque-preco').textContent = `R$ ${d.preco}`;
-                document.getElementById('destaque-whatsapp').href = `https://wa.me/5519996576067?text=Olá! Vi a novidade ${d.descricao} no site!`;
-
-                // Configura Grade (restante)
-                novidades.slice(1).forEach(p => {
-                    const img = p.imagem || `imagens/produtos/${p.codigo}.jpg`;
-                    const pJS = { codigo: p.codigo, nome: p.descricao, preco: parseFloat(p.preco.replace(',', '.')), imagem: img };
-                    
-                    grid.innerHTML += `
-                    <div class="novidade-item">
-                        <img src="${img}" onerror="this.src='imagens/placeholder.jpg'">
-                        <h4>${p.descricao}</h4>
-                        <span class="categoria-principal" style="padding: 0 15px; display: block; margin-bottom: 10px;">${p.categoria || 'Cerâmica Autoral'}</span>
-                        <p class="preco" style="padding: 0 15px; font-weight: bold; color: #8b9a6e;">R$ ${p.preco}</p>
-                        <button onclick='window.carrinho.adicionar(${JSON.stringify(pJS)})' class="btn-adicionar" style="width: 90%; margin: 10px 5%;">
-                            Adicionar
-                        </button>
-                    </div>`;
-                });
-            }
-        });
+    // Atualiza o contador do carrinho ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        const contador = document.getElementById('carrinho-contador');
+        if (contador && window.carrinho) {
+            const totalItens = window.carrinho.itens.reduce((acc, i) => acc + i.quantidade, 0);
+            contador.innerText = totalItens;
+        }
+    });
 </script>
+
 </body>
 </html>
