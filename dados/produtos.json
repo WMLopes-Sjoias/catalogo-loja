@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "04/05/2026 12:33",
-  "total_produtos": 56,
+  "ultima_atualizacao": "05/05/2026 12:08",
+  "total_produtos": 58,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -81,6 +81,15 @@
       "categoria": "CERÂMICA",
       "preco": "73,00",
       "imagem": "imagens/produtos/2000000000756.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000521",
+      "descricao": "BRINCOS PÉTALAS DOURADAS",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "50,00",
+      "imagem": "imagens/produtos/2000000000521.jpg",
       "destaque": ""
     },
     {
@@ -219,6 +228,15 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000649",
+      "descricao": "COLAR ELO FINO",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "85,00",
+      "imagem": "imagens/produtos/2000000000649.jpg",
+      "destaque": "novidade"
+    },
+    {
       "codigo": "2000000000779",
       "descricao": "COLAR ESFERAS DA FLORESTA",
       "colecao": "GERAL",
@@ -237,13 +255,13 @@
       "destaque": "novidade"
     },
     {
-      "codigo": "2000000000649",
-      "descricao": "COLAR ESSÊNCIA DA TERRA",
+      "codigo": "2000000000171",
+      "descricao": "COLAR ESSÊNCIA MINERAL",
       "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000649.jpg",
-      "destaque": "novidade"
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "170,00",
+      "imagem": "imagens/produtos/2000000000171.jpg",
+      "destaque": ""
     },
     {
       "codigo": "2000000000069",
@@ -289,6 +307,15 @@
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000191.jpg",
       "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000242",
+      "descricao": "COLAR HARMONIA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "90,00",
+      "imagem": "imagens/produtos/2000000000242.jpg",
+      "destaque": ""
     },
     {
       "codigo": "2000000000414",
@@ -414,15 +441,6 @@
       "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000574.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000242",
-      "descricao": "COLAR SUTILIZA VERDE",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA PLÁSTICA",
-      "preco": "60,00",
-      "imagem": "imagens/produtos/2000000000242.jpg",
       "destaque": ""
     },
     {
