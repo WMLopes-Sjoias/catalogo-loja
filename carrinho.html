@@ -337,8 +337,14 @@
                     <button onclick="copiarPix()" style="
                         background: #5d7a5c; color: white; padding: 10px 20px;
                         border: none; border-radius: 25px; cursor: pointer;
-                        font-size: 1em; margin-bottom: 10px;
+                        font-size: 1em; margin-bottom: 10px; width: 100%;
                     ">Copiar Código PIX</button>
+                    <button onclick="confirmarPixWhatsapp()" style="
+                        background: #25D366; color: white; padding: 10px 20px;
+                        border: none; border-radius: 25px; cursor: pointer;
+                        font-size: 1em; margin-bottom: 10px; width: 100%;
+                        display: flex; align-items: center; justify-content: center; gap: 8px;
+                    "><i class="fab fa-whatsapp"></i> Confirmar no WhatsApp</button>
                     <button onclick="fecharModalPix()" style="
                         background: #ccc; color: #333; padding: 10px 20px;
                         border: none; border-radius: 25px; cursor: pointer;
@@ -368,6 +374,13 @@
         if (pixModal) {
             pixModal.remove();
         }
+    }
+
+    function confirmarPixWhatsapp() {
+        const mensagemBase = window.carrinho.gerarMensagemWhatsApp();
+        const textoPix = "Olá! Acabei de realizar o pagamento via PIX para o meu pedido na Terráli. Segue o detalhamento abaixo e o comprovante em anexo:\n\n";
+        const mensagemFinal = encodeURIComponent(textoPix) + mensagemBase;
+        window.open(`https://wa.me/5519996576067?text=${mensagemFinal}`, '_blank');
     }
 
     function carregarCarrinho() {
