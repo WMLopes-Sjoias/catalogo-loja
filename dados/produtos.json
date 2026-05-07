@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "05/05/2026 12:08",
-  "total_produtos": 58,
+  "ultima_atualizacao": "07/05/2026 12:45",
+  "total_produtos": 55,
   "produtos": [
     {
       "codigo": "2000000000775",
@@ -192,15 +192,6 @@
       "destaque": ""
     },
     {
-      "codigo": "2000000000729",
-      "descricao": "COLAR COSMOS BLUE",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000729.jpg",
-      "destaque": ""
-    },
-    {
       "codigo": "2000000000786",
       "descricao": "COLAR DE GOTAS BRANCAS",
       "colecao": "GERAL",
@@ -279,15 +270,6 @@
       "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000429.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000751",
-      "descricao": "COLAR FOLHA DE HERA",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000751.jpg",
       "destaque": ""
     },
     {
@@ -414,15 +396,6 @@
       "categoria": "BIJOUTERIA",
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000593.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000785",
-      "descricao": "COLAR PÉROLAS DA TERRA",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "35,00",
-      "imagem": "imagens/produtos/2000000000785.jpg",
       "destaque": ""
     },
     {
