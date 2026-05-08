@@ -1,7 +1,16 @@
 {
-  "ultima_atualizacao": "07/05/2026 12:45",
-  "total_produtos": 55,
+  "ultima_atualizacao": "08/05/2026 11:15",
+  "total_produtos": 58,
   "produtos": [
+    {
+      "codigo": "2000000000739",
+      "descricao": "BRINCOS ABSTRATO CAFÉ",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "55,00",
+      "imagem": "imagens/produtos/2000000000739.jpg",
+      "destaque": ""
+    },
     {
       "codigo": "2000000000775",
       "descricao": "BRINCOS CERÂMICA",
@@ -81,6 +90,15 @@
       "categoria": "CERÂMICA",
       "preco": "73,00",
       "imagem": "imagens/produtos/2000000000756.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000640",
+      "descricao": "BRINCOS DUALIDADE SUAVE",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "55,00",
+      "imagem": "imagens/produtos/2000000000640.jpg",
       "destaque": ""
     },
     {
@@ -226,6 +244,15 @@
       "preco": "85,00",
       "imagem": "imagens/produtos/2000000000649.jpg",
       "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000741",
+      "descricao": "COLAR ENCONTRO DAS ÁGUAS",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "85,00",
+      "imagem": "imagens/produtos/2000000000741.jpg",
+      "destaque": ""
     },
     {
       "codigo": "2000000000779",
