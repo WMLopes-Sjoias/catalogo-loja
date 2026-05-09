@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "08/05/2026 12:18",
-  "total_produtos": 60,
+  "ultima_atualizacao": "09/05/2026 11:05",
+  "total_produtos": 63,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -93,6 +93,15 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000287",
+      "descricao": "BRINCOS CÉU DE INVERNO",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "52,00",
+      "imagem": "imagens/produtos/2000000000287.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000640",
       "descricao": "BRINCOS DUALIDADE SUAVE",
       "colecao": "GERAL",
@@ -127,6 +136,24 @@
       "preco": "50,00",
       "imagem": "imagens/produtos/2000000000738.jpg",
       "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000334",
+      "descricao": "BRINCOS SEGMENTO",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "55,00",
+      "imagem": "imagens/produtos/2000000000334.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000375",
+      "descricao": "BRINCOS SEMILUNA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "65,00",
+      "imagem": "imagens/produtos/2000000000375.jpg",
+      "destaque": ""
     },
     {
       "codigo": "2000000000251",
