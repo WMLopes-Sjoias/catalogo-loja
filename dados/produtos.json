@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "09/05/2026 11:05",
-  "total_produtos": 63,
+  "ultima_atualizacao": "11/05/2026 09:47",
+  "total_produtos": 66,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -111,6 +111,24 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000402",
+      "descricao": "BRINCOS GOTA DE OLIVA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000402.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000471",
+      "descricao": "BRINCOS LUA PÚRPURA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000471.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000611",
       "descricao": "BRINCOS OUSADIA PÚRPURA",
       "colecao": "GERAL",
@@ -118,6 +136,15 @@
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000611.jpg",
       "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000415",
+      "descricao": "BRINCOS PÉTALAS DE MAGENTA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000415.jpg",
+      "destaque": ""
     },
     {
       "codigo": "2000000000521",
