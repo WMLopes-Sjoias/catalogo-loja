@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "11/05/2026 09:47",
-  "total_produtos": 66,
+  "ultima_atualizacao": "12/05/2026 09:54",
+  "total_produtos": 68,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -108,6 +108,15 @@
       "categoria": "BIJOUTERIA",
       "preco": "55,00",
       "imagem": "imagens/produtos/2000000000640.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000448",
+      "descricao": "BRINCOS GEOMETRIA TRIBAL",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000448.jpg",
       "destaque": ""
     },
     {
@@ -595,6 +604,15 @@
       "preco": "180,00",
       "imagem": "imagens/produtos/2000000000754.jpg",
       "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000447",
+      "descricao": "PETALAS DO CREPÚSCULO",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000447.jpg",
+      "destaque": ""
     }
   ]
 }
