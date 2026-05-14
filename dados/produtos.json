@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "12/05/2026 10:01",
-  "total_produtos": 68,
+  "ultima_atualizacao": "14/05/2026 11:02",
+  "total_produtos": 71,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -111,6 +111,24 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000480",
+      "descricao": "BRINCOS FLOR DE LAVANDA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000480.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000495",
+      "descricao": "BRINCOS GEOMETRIA NOTURNA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000495.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000448",
       "descricao": "BRINCOS GEOMETRIA TRIBAL",
       "colecao": "GERAL",
@@ -135,6 +153,15 @@
       "categoria": "CERÂMICA PLÁSTICA",
       "preco": "30,00",
       "imagem": "imagens/produtos/2000000000471.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000718",
+      "descricao": "BRINCOS NÉVOA AZUL",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000718.jpg",
       "destaque": ""
     },
     {
