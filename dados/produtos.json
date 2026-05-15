@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "14/05/2026 11:02",
-  "total_produtos": 71,
+  "ultima_atualizacao": "15/05/2026 12:13",
+  "total_produtos": 75,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -10,6 +10,24 @@
       "preco": "55,00",
       "imagem": "imagens/produtos/2000000000739.jpg",
       "destaque": ""
+    },
+    {
+      "codigo": "2000000000567",
+      "descricao": "BRINCOS BARROCA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000567.jpg",
+      "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000585",
+      "descricao": "BRINCOS CACAU",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000585.jpg",
+      "destaque": "novidade"
     },
     {
       "codigo": "2000000000775",
@@ -154,6 +172,24 @@
       "preco": "30,00",
       "imagem": "imagens/produtos/2000000000471.jpg",
       "destaque": ""
+    },
+    {
+      "codigo": "2000000000549",
+      "descricao": "BRINCOS MAR PROFUNDO",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000549.jpg",
+      "destaque": "novidade"
+    },
+    {
+      "codigo": "2000000000520",
+      "descricao": "BRINCOS MARFIM",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "30,00",
+      "imagem": "imagens/produtos/2000000000520.jpg",
+      "destaque": "novidade"
     },
     {
       "codigo": "2000000000718",
