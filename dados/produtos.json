@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "15/05/2026 12:13",
-  "total_produtos": 75,
+  "ultima_atualizacao": "27/05/2026 10:23",
+  "total_produtos": 74,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -135,15 +135,6 @@
       "categoria": "CERÂMICA PLÁSTICA",
       "preco": "30,00",
       "imagem": "imagens/produtos/2000000000480.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000495",
-      "descricao": "BRINCOS GEOMETRIA NOTURNA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA PLÁSTICA",
-      "preco": "30,00",
-      "imagem": "imagens/produtos/2000000000495.jpg",
       "destaque": ""
     },
     {
