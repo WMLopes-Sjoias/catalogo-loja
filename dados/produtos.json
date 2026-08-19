@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "19/08/2026 13:29",
+  "ultima_atualizacao": "19/08/2026 13:32",
   "total_produtos": 72,
   "produtos": [
     {
@@ -471,15 +471,6 @@
       "destaque": ""
     },
     {
-      "codigo": "2000000000729",
-      "descricao": "COLAR LUA NOVA",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000729.jpg",
-      "destaque": ""
-    },
-    {
       "codigo": "2000000000072",
       "descricao": "COLAR LUAR",
       "colecao": "GERAL",
@@ -522,6 +513,15 @@
       "categoria": "BIJOUTERIA",
       "preco": "80,00",
       "imagem": "imagens/produtos/2000000000043.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000729",
+      "descricao": "COLAR PEDRAS DA LUA",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "40,00",
+      "imagem": "imagens/produtos/2000000000729.jpg",
       "destaque": ""
     },
     {
