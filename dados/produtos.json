@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "19/08/2026 17:59",
-  "total_produtos": 72,
+  "ultima_atualizacao": "20/08/2026 13:29",
+  "total_produtos": 76,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -255,6 +255,15 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000631",
+      "descricao": "COLAR AZUL CELESTIAL",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "140,00",
+      "imagem": "imagens/produtos/2000000000631.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000563",
       "descricao": "COLAR CERÂMICA",
       "colecao": "GERAL",
@@ -381,6 +390,15 @@
       "destaque": ""
     },
     {
+      "codigo": "2000000000633",
+      "descricao": "COLAR ESFERAS DA TERRA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "90,00",
+      "imagem": "imagens/produtos/2000000000633.jpg",
+      "destaque": ""
+    },
+    {
       "codigo": "2000000000430",
       "descricao": "COLAR ESSÊNCIA DA FLORESTA",
       "colecao": "GERAL",
@@ -414,6 +432,15 @@
       "categoria": "CERÂMICA PLÁSTICA",
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000429.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000669",
+      "descricao": "COLAR FORESCER",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA PLÁSTICA",
+      "preco": "60,00",
+      "imagem": "imagens/produtos/2000000000669.jpg",
       "destaque": ""
     },
     {
@@ -549,6 +576,15 @@
       "categoria": "BIJOUTERIA",
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000593.jpg",
+      "destaque": ""
+    },
+    {
+      "codigo": "2000000000672",
+      "descricao": "COLAR PÉTALA",
+      "colecao": "GERAL",
+      "categoria": "CERÂMICA",
+      "preco": "160,00",
+      "imagem": "imagens/produtos/2000000000672.jpg",
       "destaque": ""
     },
     {
