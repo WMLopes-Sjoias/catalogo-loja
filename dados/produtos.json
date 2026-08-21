@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "21/08/2026 10:24",
-  "total_produtos": 78,
+  "ultima_atualizacao": "21/08/2026 13:56",
+  "total_produtos": 79,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -622,6 +622,15 @@
       "preco": "60,00",
       "imagem": "imagens/produtos/2000000000574.jpg",
       "destaque": ""
+    },
+    {
+      "codigo": "2000000000780",
+      "descricao": "COLAR TRAMAS",
+      "colecao": "GERAL",
+      "categoria": "BIJOUTERIA",
+      "preco": "35,00",
+      "imagem": "imagens/produtos/2000000000780.jpg",
+      "destaque": "novidade"
     },
     {
       "codigo": "2000000000782",
