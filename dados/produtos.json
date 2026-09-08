@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "21/08/2026 13:56",
-  "total_produtos": 79,
+  "ultima_atualizacao": "08/09/2026 09:52",
+  "total_produtos": 77,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -228,15 +228,6 @@
       "destaque": ""
     },
     {
-      "codigo": "2000000000375",
-      "descricao": "BRINCOS SEMILUNA",
-      "colecao": "GERAL",
-      "categoria": "CERÂMICA PLÁSTICA",
-      "preco": "65,00",
-      "imagem": "imagens/produtos/2000000000375.jpg",
-      "destaque": ""
-    },
-    {
       "codigo": "2000000000251",
       "descricao": "BRINCOS TERRA COTA",
       "colecao": "GERAL",
@@ -333,15 +324,6 @@
       "categoria": "CERÂMICA",
       "preco": "98,00",
       "imagem": "imagens/produtos/2000000000762.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000786",
-      "descricao": "COLAR DE GOTAS BRANCAS",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "80,00",
-      "imagem": "imagens/produtos/2000000000786.jpg",
       "destaque": ""
     },
     {
