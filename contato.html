@@ -71,12 +71,13 @@
             
             <div class="contato-form">
                 <h3>Envie uma mensagem</h3>
-                <form id="formContato">
-                    <input type="text" placeholder="Seu nome" required>
-                    <input type="email" placeholder="Seu e-mail" required>
-                    <input type="text" placeholder="Assunto">
-                    <textarea rows="5" placeholder="Sua mensagem"></textarea>
+                <form id="formContato" action="https://formspree.io/f/xnpdvodj" method="post">
+                    <input type="text" name="name" placeholder="Seu nome" aria-label="Seu nome" required>
+                    <input type="email" name="email" placeholder="Seu e-mail" aria-label="Seu e-mail" required>
+                    <input type="text" name="subject" placeholder="Assunto" aria-label="Assunto">
+                    <textarea name="message" rows="5" placeholder="Sua mensagem" aria-label="Sua mensagem" required></textarea>
                     <button type="submit" class="btn-enviar">Enviar mensagem</button>
+                    <p id="statusContato" role="status"></p>
                 </form>
             </div>
         </div>
@@ -130,9 +131,32 @@
         }
     });
     
-    document.getElementById('formContato')?.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Funcionalidade em desenvolvimento. Por enquanto, use o WhatsApp!');
+    const formulario = document.getElementById('formContato');
+    const statusContato = document.getElementById('statusContato');
+    const botaoEnviar = formulario.querySelector('button[type="submit"]');
+
+    formulario.addEventListener('submit', async function(evento) {
+        evento.preventDefault();
+        if (botaoEnviar.disabled) return;
+
+        botaoEnviar.disabled = true;
+        statusContato.textContent = 'Enviando mensagem…';
+
+        try {
+            const resposta = await fetch(formulario.action, {
+                method: formulario.method,
+                body: new FormData(formulario),
+                headers: { Accept: 'application/json' }
+            });
+            if (!resposta.ok) throw new Error('Falha no envio');
+
+            formulario.reset();
+            statusContato.textContent = 'Mensagem enviada. Obrigado pelo contato!';
+        } catch {
+            statusContato.textContent = 'Não foi possível enviar a mensagem. Tente novamente ou fale pelo WhatsApp.';
+        } finally {
+            botaoEnviar.disabled = false;
+        }
     });
 </script>
 
