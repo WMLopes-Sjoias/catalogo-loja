@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "06/11/2026 18:26",
-  "total_produtos": 77,
+  "ultima_atualizacao": "17/11/2026 23:45",
+  "total_produtos": 75,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -516,15 +516,6 @@
       "destaque": ""
     },
     {
-      "codigo": "2000000000510",
-      "descricao": "COLAR OCEANO E AREIA",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000510.jpg",
-      "destaque": "novidade"
-    },
-    {
       "codigo": "2000000000043",
       "descricao": "COLAR OCRE E MARFIM",
       "colecao": "GERAL",
@@ -567,15 +558,6 @@
       "categoria": "BIJOUTERIA",
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000593.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000785",
-      "descricao": "COLAR PÉROLAS DA TERRA",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "40,00",
-      "imagem": "imagens/produtos/2000000000785.jpg",
       "destaque": ""
     },
     {
