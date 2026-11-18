@@ -1,6 +1,6 @@
 {
-  "ultima_atualizacao": "17/11/2026 23:45",
-  "total_produtos": 75,
+  "ultima_atualizacao": "18/11/2026 00:59",
+  "total_produtos": 74,
   "produtos": [
     {
       "codigo": "2000000000739",
@@ -513,15 +513,6 @@
       "categoria": "BIJOUTERIA",
       "preco": "40,00",
       "imagem": "imagens/produtos/2000000000589.jpg",
-      "destaque": ""
-    },
-    {
-      "codigo": "2000000000043",
-      "descricao": "COLAR OCRE E MARFIM",
-      "colecao": "GERAL",
-      "categoria": "BIJOUTERIA",
-      "preco": "130,00",
-      "imagem": "imagens/produtos/2000000000043.jpg",
       "destaque": ""
     },
     {

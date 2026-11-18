@@ -4,16 +4,20 @@ echo   ENVIANDO CATALOGO PARA O GITHUB
 echo ========================================
 echo.
 
-cd /d C:\Users\wilso\catalogo-loja
+cd /d "%~dp0" || exit /b 1
+if not exist ".git\HEAD" exit /b 1
 
 echo [1/3] Adicionando arquivos...
-git add .
+git add . || exit /b 1
 
 echo [2/3] Commitando alteracoes...
-git commit -m "Atualizacao catalogo %date% %time%"
+git diff --cached --quiet
+if errorlevel 1 (
+    git commit -m "Atualizacao catalogo %date% %time%" || exit /b 1
+)
 
 echo [3/3] Enviando para o GitHub...
-git push
+git push || (pause & exit /b 1)
 
 echo.
 echo ========================================
